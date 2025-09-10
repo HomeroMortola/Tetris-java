@@ -1,5 +1,6 @@
 package com.mycompany.app;
 
-public class PieceDogL {
+public class PieceDogL extends Piece {
+    
     
 }

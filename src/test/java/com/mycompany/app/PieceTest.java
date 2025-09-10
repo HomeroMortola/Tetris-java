@@ -22,4 +22,5 @@ public class PieceTest {
         
         assertTrue(p.getElementos().length == 4);
     }
+    
 }
