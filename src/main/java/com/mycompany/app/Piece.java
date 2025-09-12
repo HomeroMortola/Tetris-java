@@ -6,10 +6,10 @@ public abstract class Piece {
     
     //Constructor de la pieza (4 Cells)
     public Piece(Cell cell0, Cell cell1, Cell cell2, Cell cell3) {
-        setElementos(cell0, -1);
-        setElementos(cell1, 0);
-        setElementos(cell2, 1);
-        setElementos(cell3, 2);
+        setElementos(cell0, 0);
+        setElementos(cell1, 1);
+        setElementos(cell2, 2);
+        setElementos(cell3, 3);
     }
      
     public void setElementos(Cell _cell, int i) {
