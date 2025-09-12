@@ -12,7 +12,7 @@ public class TetrisTest {
 
     @Test
     public void testTetrisExiste() {
-        Tetris t = new Tetris();
+        Tetris t = new Tetris(10, 20);
         assertNotNull(t);
     }
     

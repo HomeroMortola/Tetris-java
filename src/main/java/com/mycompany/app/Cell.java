@@ -1,26 +1,34 @@
 package com.mycompany.app;
 
 public class Cell {
-    protected int x;
-    protected int y;
+    private int x;
+    private int y;
 
     //Constructor de Cell
     public Cell(int x, int y) {
-        setCellPos(x, y);
+        setPosition(x, y);
     }
 
     //Set para doble encapsulamiento
-    public void setCellPos(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public void setPosition(int x, int y) {
+        setX(x);
+        setY(y);
+    }
+
+    private void setX(int value) {
+        this.x = value;
+    }
+
+    private void setY(int value) {
+        this.y = value;
     }
 
     //Get para doble encapsulamiento
-    public int getCellX() {
-        return x;
+    public int getX() {
+        return this.x;
     }
 
-    public int getCellY() {
-        return y;
+    public int getY() {
+        return this.y;
     }
 }
