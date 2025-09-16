@@ -12,13 +12,13 @@ public class PieceTest {
 
     @Test
     public void testPieceExiste() {
-        Piece p = new PieceSquare(0, 0);
+        PieceBase p = new PieceSquare(0, 0);
         assertNotNull(p);
     }
 
     @Test
     public void testPiece4Elementos() {
-        Piece p = new PieceSquare(0, 0);
+        PieceBase p = new PieceSquare(0, 0);
         assertTrue(p.getElementos().length == 4);
     }
     

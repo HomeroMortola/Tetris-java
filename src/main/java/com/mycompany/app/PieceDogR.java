@@ -1,6 +1,6 @@
 package com.mycompany.app;
 
-public class PieceDogR extends Piece {
+public class PieceDogR extends PieceBase {
     public PieceDogR(int originX, int originY) {
         super(
             new Cell(originX + 1, originY),

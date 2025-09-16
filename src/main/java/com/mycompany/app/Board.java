@@ -1,12 +1,18 @@
 package com.mycompany.app;
+import java.util.List;
+import java.util.ArrayList;
 
-public class Tetris {
+public class Board { 
+
+    private List<PieceBase> pieces = new ArrayList<PieceBase>();
     private int width;
     private int height;
+    private PieceBase currentPice;
 
-    /* 
-    //Constructor de Tetris
-    public Tetris(int width, int height) {
+
+    
+
+    public Board(int width, int height) {
         setWidthHeight(width, height);
     }
 
@@ -31,5 +37,12 @@ public class Tetris {
 
     public int getHeight() {
         return height;
-    }*/
+    }
+    
+    public void lineConunt(){
+    }
+
+    
+
+    
 }

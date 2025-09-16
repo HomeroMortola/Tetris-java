@@ -1,11 +1,11 @@
 package com.mycompany.app;
 
-public abstract class Piece {
+public abstract class PieceBase {
 
     private Cell[] cells = new Cell [4];
     
     //Constructor de la pieza (4 Cells)
-    public Piece(Cell cell0, Cell cell1, Cell cell2, Cell cell3) {
+    public PieceBase(Cell cell0, Cell cell1, Cell cell2, Cell cell3) {
         setElementos(cell0, 0);
         setElementos(cell1, 1);
         setElementos(cell2, 2);
