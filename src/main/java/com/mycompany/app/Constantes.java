@@ -1,7 +1,7 @@
 package com.mycompany.app;
 
 public class Constantes {
-    private static Cell[] cuboBase = 
+    private Cell[] cuboBase = 
     {
         new Cell(0, 0),
         new Cell(1, 0),
@@ -9,7 +9,7 @@ public class Constantes {
         new Cell(1, 1)
     };
 
-    public static Cell[] getCubo() {
+    public Cell[] getCubo() {
         return cuboBase;
     }
 

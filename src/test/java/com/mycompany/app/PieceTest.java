@@ -2,6 +2,7 @@ package com.mycompany.app;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -21,18 +22,17 @@ public class PieceTest {
         PieceBase p = new PieceSquare(0, 0);
         assertTrue(p.getElementos().length == 4);
     }
+    
     @Test
     public void testPieceSquer() {
-        PieceBase p = new PieceSquare(0, 0);
-        Object[] c = p.getElementos();
-        assertTrue(((Cell) c[0]).getX()==0);
-        assertTrue(((Cell) c[0]).getY()==0);
-        assertTrue(((Cell) c[1]).getX()==1);
-        assertTrue(((Cell) c[1]).getY()==0);
-        assertTrue(((Cell) c[2]).getX()==0);
-        assertTrue(((Cell) c[2]).getY()==1);
-        assertTrue(((Cell) c[3]).getX()==1);
-        assertTrue(((Cell) c[3]).getY()==1);
+        Constantes ctes = new Constantes();
+        PieceBase p1 = new PieceSquare(0, 0);
+        Cell[] cels = p1.getElementos();
+        assertArrayEquals("n",p1.getElementos(), ctes.getCubo());
+        
+
+        
+        
     }
     @Test
     public void testPieceStick() {
