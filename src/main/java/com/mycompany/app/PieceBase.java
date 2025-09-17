@@ -20,8 +20,43 @@ public abstract class PieceBase {
         return cells;
     }
     
-    public abstract void rotateLeft();
+    public void rotateLeft() {
+        
+        Cell[] cells = getElementos();
+        int centerX = cells[1].getX();
+        int centerY = cells[1].getY();
 
-    public abstract void rotateRight();
-    
+        for (Cell cell : cells) {
+            int x = cell.getX() - centerX;
+            int y = cell.getY() - centerY;
+
+            
+            int newX = -y;
+            int newY = x;
+
+            cell.setX(centerX + newX);
+            cell.setY(centerY + newY);
+        }
+    }
+
+
+    public void rotateRight() {
+        Cell[] cells = getElementos();
+        int centerX = cells[1].getX();
+        int centerY = cells[1].getY();
+
+        for (Cell cell : cells) {
+            int x = cell.getX() - centerX;
+            int y = cell.getY() - centerY;
+
+            
+            int newX = -y;
+            int newY = x;
+
+            cell.setX(centerX + newX);
+            cell.setY(centerY + newY);
+        }
+        
+    }
+        
 }

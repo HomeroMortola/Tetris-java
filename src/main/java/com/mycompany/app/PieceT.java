@@ -34,6 +34,18 @@ public class PieceT extends PieceBase{
         Cell[] cells = getElementos();
         int centerX = cells[1].getX();
         int centerY = cells[1].getY();
+
+        for (Cell cell : cells) {
+            int x = cell.getX() - centerX;
+            int y = cell.getY() - centerY;
+
+            
+            int newX = -y;
+            int newY = x;
+
+            cell.setX(centerX + newX);
+            cell.setY(centerY + newY);
+        }
         
     }
     
