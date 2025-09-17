@@ -3,8 +3,12 @@ package com.mycompany.app;
 import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 
 public class PieceTest {
@@ -28,11 +32,12 @@ public class PieceTest {
         Constantes ctes = new Constantes();
         PieceBase p1 = new PieceSquare(0, 0);
         Cell[] cels = p1.getElementos();
-        assertArrayEquals("n",p1.getElementos(), ctes.getCubo());
-        
+        Cell[] esperado = ctes.getCubo();
 
-        
-        
+        for (int i = 0; i < cels.length; i++) {
+        assertEquals("x distinto en celda " + i, esperado[i].getX(), cels[i].getX());
+        assertEquals("y distinto en celda " + i, esperado[i].getY(), cels[i].getY());
+    }
     }
     @Test
     public void testPieceStick() {
