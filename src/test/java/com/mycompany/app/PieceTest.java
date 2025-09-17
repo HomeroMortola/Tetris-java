@@ -50,69 +50,68 @@ public class PieceTest {
     }
     @Test
     public void testPieceLR() {
-        PieceBase p = new PieceStick(0, 0);
+        PieceBase p = new PieceLR(0, 0);
         Object[] c = p.getElementos();
-        assertTrue(((Cell) c[0]).getX()==0);
-        assertTrue(((Cell) c[0]).getY()==-1);
+        assertTrue(((Cell) c[0]).getX()==-1);
+        assertTrue(((Cell) c[0]).getY()==0);
         assertTrue(((Cell) c[1]).getX()==0);
         assertTrue(((Cell) c[1]).getY()==0);  
-        assertTrue(((Cell) c[2]).getX()==0);
-        assertTrue(((Cell) c[2]).getY()==1);
-        assertTrue(((Cell) c[3]).getX()==0);
-        assertTrue(((Cell) c[3]).getY()==2);
+        assertTrue(((Cell) c[2]).getX()==1);
+        assertTrue(((Cell) c[2]).getY()==0);
+        assertTrue(((Cell) c[3]).getX()==2);
+        assertTrue(((Cell) c[3]).getY()==-1);
     }
     @Test
     public void testPieceLL() {
-        PieceBase p = new PieceStick(0, 0);
+        PieceBase p = new PieceLL(0, 0);
         Object[] c = p.getElementos();
-        assertTrue(((Cell) c[0]).getX()==0);
-        assertTrue(((Cell) c[0]).getY()==-1);
+        assertTrue(((Cell) c[0]).getX()==1);
+        assertTrue(((Cell) c[0]).getY()==0);
         assertTrue(((Cell) c[1]).getX()==0);
         assertTrue(((Cell) c[1]).getY()==0);  
-        assertTrue(((Cell) c[2]).getX()==0);
-        assertTrue(((Cell) c[2]).getY()==1);
-        assertTrue(((Cell) c[3]).getX()==0);
-        assertTrue(((Cell) c[3]).getY()==2);
+        assertTrue(((Cell) c[2]).getX()==-1);
+        assertTrue(((Cell) c[2]).getY()==0);
+        assertTrue(((Cell) c[3]).getX()==-2);
+        assertTrue(((Cell) c[3]).getY()==1);
     }
     @Test
     public void testPieceT() {
-        PieceBase p = new PieceStick(0, 0);
+        PieceBase p = new PieceT(0, 0);
         Object[] c = p.getElementos();
-        assertTrue(((Cell) c[0]).getX()==0);
-        assertTrue(((Cell) c[0]).getY()==-1);
+        assertTrue(((Cell) c[0]).getX()==-1);
+        assertTrue(((Cell) c[0]).getY()==0);
         assertTrue(((Cell) c[1]).getX()==0);
         assertTrue(((Cell) c[1]).getY()==0);  
-        assertTrue(((Cell) c[2]).getX()==0);
-        assertTrue(((Cell) c[2]).getY()==1);
+        assertTrue(((Cell) c[2]).getX()==1);
+        assertTrue(((Cell) c[2]).getY()==0);
         assertTrue(((Cell) c[3]).getX()==0);
-        assertTrue(((Cell) c[3]).getY()==2);
+        assertTrue(((Cell) c[3]).getY()==-1);
     }
     @Test
     public void testPieceDogR() {
-        PieceBase p = new PieceStick(0, 0);
+        PieceBase p = new PieceDogR(0, 0);
         Object[] c = p.getElementos();
-        assertTrue(((Cell) c[0]).getX()==0);
-        assertTrue(((Cell) c[0]).getY()==-1);
+        assertTrue(((Cell) c[0]).getX()==1);
+        assertTrue(((Cell) c[0]).getY()==0);
         assertTrue(((Cell) c[1]).getX()==0);
         assertTrue(((Cell) c[1]).getY()==0);  
-        assertTrue(((Cell) c[2]).getX()==0);
-        assertTrue(((Cell) c[2]).getY()==1);
-        assertTrue(((Cell) c[3]).getX()==0);
-        assertTrue(((Cell) c[3]).getY()==2);
+        assertTrue(((Cell) c[2]).getX()==-1);
+        assertTrue(((Cell) c[2]).getY()==0);
+        assertTrue(((Cell) c[3]).getX()==-1);
+        assertTrue(((Cell) c[3]).getY()==-1);
     }
     @Test
     public void testPieceDogL() {
-        PieceBase p = new PieceStick(0, 0);
+        PieceBase p = new PieceDogL(0, 0);
         Object[] c = p.getElementos();
         assertTrue(((Cell) c[0]).getX()==0);
         assertTrue(((Cell) c[0]).getY()==-1);
         assertTrue(((Cell) c[1]).getX()==0);
         assertTrue(((Cell) c[1]).getY()==0);  
-        assertTrue(((Cell) c[2]).getX()==0);
-        assertTrue(((Cell) c[2]).getY()==1);
-        assertTrue(((Cell) c[3]).getX()==0);
-        assertTrue(((Cell) c[3]).getY()==2);
-    }   
-
+        assertTrue(((Cell) c[2]).getX()==1);
+        assertTrue(((Cell) c[2]).getY()==0);
+        assertTrue(((Cell) c[3]).getX()==1);
+        assertTrue(((Cell) c[3]).getY()==1);
+    }
     
 }
