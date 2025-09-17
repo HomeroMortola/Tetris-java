@@ -19,11 +19,9 @@ public abstract class PieceBase {
     public Cell[] getElementos() {
         return cells;
     }
-
-   
-
     
+    public abstract void rotateLeft();
 
-        
-        
+    public abstract void rotateRight();
+    
 }

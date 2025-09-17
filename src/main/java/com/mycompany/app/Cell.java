@@ -15,11 +15,11 @@ public class Cell {
         setY(y);
     }
 
-    private void setX(int value) {
+    public void setX(int value) {
         this.x = value;
     }
 
-    private void setY(int value) {
+    public void setY(int value) {
         this.y = value;
     }
 
