@@ -45,7 +45,7 @@ public class Constantes {
         new Cell(-1, 0),
         new Cell(0, 0),
         new Cell(1, 0),
-        new Cell(2, 1)
+        new Cell(2, -1)
     };
 
     public static Cell[] getLR() {
@@ -58,7 +58,7 @@ public class Constantes {
         new Cell(-1, 0),
         new Cell(0, 0),
         new Cell(1, 0),
-        new Cell(0, 1)
+        new Cell(0, -1)
     };
 
     public static Cell[] getT() {
@@ -68,9 +68,9 @@ public class Constantes {
 
     private static Cell[] dogLBase =
     {
-        new Cell(-1, 0),
+        new Cell(0, -1),
         new Cell(0, 0),
-        new Cell(0, 1),
+        new Cell(1, 0),
         new Cell(1, 1)
     };
 
@@ -82,8 +82,8 @@ public class Constantes {
     {
         new Cell(1, 0),
         new Cell(0, 0),
-        new Cell(0, 1),
-        new Cell(-1, 1)
+        new Cell(-1, 0),
+        new Cell(-1, -1)
     };
 
     public static Cell[] getDogR() {
