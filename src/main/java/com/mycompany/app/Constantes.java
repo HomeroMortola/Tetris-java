@@ -1,6 +1,7 @@
 package com.mycompany.app;
 
 public class Constantes {
+    //Constantes de la pieza base
     private Cell[] cuboBase = 
     {
         new Cell(0, 0),
