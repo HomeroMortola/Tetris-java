@@ -11,11 +11,7 @@ public class BoardTest {
         Board board1 = new Board(10, 20);
         assertNotNull(board1);
     }
-    @Test
-    public void testBoardWidth() {
-        Board board1 = new Board(10, 20);
-        
-    }
+    
     @Test
     public void testCaidaLibreStick() {
         Board board1 = new Board(10, 20);
