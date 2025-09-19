@@ -18,7 +18,7 @@ public abstract class PieceBase {
     }
 
     //Devuelve el arreglo de celdas, doble encapsulamiento
-    public Cell[] getElementos() {
+    public Cell[] getCells() {
         return cells;
     }
 

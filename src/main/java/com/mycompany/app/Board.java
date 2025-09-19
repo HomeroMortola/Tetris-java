@@ -60,7 +60,7 @@ public class Board {
     public void moveDown(){
     boolean canMove = true; 
         for (int i = 0; i < 4; i++) {
-            if (getCurrentPiece().getElementos()[i].getY() == 0) {
+            if (getCurrentPiece().getCells()[i].getY() == 0) {
                 canMove = false;
                 break; 
             }
@@ -69,7 +69,7 @@ public class Board {
         
         if (canMove) { 
             for (int i = 0; i < 4; i++) {
-                getCurrentPiece().getElementos()[i].setY(getCurrentPiece().getElementos()[i].getY() - 1);
+                getCurrentPiece().getCells()[i].setY(getCurrentPiece().getCells()[i].getY() - 1);
             }
         }
     }

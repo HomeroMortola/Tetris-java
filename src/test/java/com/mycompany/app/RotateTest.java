@@ -8,7 +8,7 @@ public class RotateTest {
     @Test
     public void testPieceTRotateL() {
         PieceBase p = new PieceT(0, 0);
-        Object[] c = p.getElementos();
+        Object[] c = p.getCells();
         
         p.rotateLeft();
         assertTrue(((Cell) c[0]).getX()==0);
@@ -26,7 +26,7 @@ public class RotateTest {
     @Test
     public void testPieceTRotateR() {
         PieceBase p = new PieceT(0, 0);
-        Object[] c = p.getElementos();
+        Object[] c = p.getCells();
         p.rotateRight();
         assertTrue(((Cell) c[0]).getX()==0);
         assertTrue(((Cell) c[0]).getY()==1);

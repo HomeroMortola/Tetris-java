@@ -24,14 +24,14 @@ public class PieceTest {
     @Test
     public void testPiece4Elementos() {
         PieceBase p = new PieceSquare(0, 0);
-        assertTrue(p.getElementos().length == 4);
+        assertTrue(p.getCells().length == 4);
     }
     
     @Test
     public void testPieceSquer() {
         Constantes constantes = new Constantes();
         PieceBase p1 = new PieceSquare(0, 0);
-        Cell[] cels = p1.getElementos();
+        Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getCubo();
 
         for (int i = 0; i < cels.length; i++) {
@@ -43,7 +43,7 @@ public class PieceTest {
     public void testPieceStick() {
         Constantes constantes = new Constantes();
         PieceBase p1 = new PieceStick(0, 0);
-        Cell[] cels = p1.getElementos();
+        Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getStick();
 
         for (int i = 0; i < cels.length; i++) {
@@ -55,7 +55,7 @@ public class PieceTest {
     public void testPieceLR() {
         Constantes constantes = new Constantes();
         PieceBase p1 = new PieceLR(0, 0);
-        Cell[] cels = p1.getElementos();
+        Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getLR();
 
         for (int i = 0; i < cels.length; i++) {
@@ -67,7 +67,7 @@ public class PieceTest {
     public void testPieceLL() {
         Constantes constantes = new Constantes();
         PieceBase p1 = new PieceLL(0, 0);
-        Cell[] cels = p1.getElementos();
+        Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getLL();
 
         for (int i = 0; i < cels.length; i++) {
@@ -79,7 +79,7 @@ public class PieceTest {
     public void testPieceT() {
         Constantes constantes = new Constantes();
         PieceBase p1 = new PieceT(0, 0);
-        Cell[] cels = p1.getElementos();
+        Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getT();
 
         for (int i = 0; i < cels.length; i++) {
@@ -91,7 +91,7 @@ public class PieceTest {
     public void testPieceDogR() {
         Constantes constantes = new Constantes();
         PieceBase p1 = new PieceDogR(0, 0);
-        Cell[] cels = p1.getElementos();
+        Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getDogR();
 
         for (int i = 0; i < cels.length; i++) {
@@ -103,7 +103,7 @@ public class PieceTest {
     public void testPieceDogL() {
         Constantes constantes = new Constantes();
         PieceBase p1 = new PieceDogL(0, 0);
-        Cell[] cels = p1.getElementos();
+        Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getDogL();
 
         for (int i = 0; i < cels.length; i++) {
