@@ -14,7 +14,7 @@ public class Constantes {
         return cuboBase;
     }
 
-
+    //Constantes de StickBase
     private static Cell[] stickBase = 
     {
         new Cell(0, -1),
@@ -23,11 +23,11 @@ public class Constantes {
         new Cell(0, 2)
     };
 
-    public static Cell[] getStick() {
+    public Cell[] getStick() {
         return stickBase;
     }
 
-
+    //Constantes de LRBase
     private static Cell[] lLBace = 
     {
         new Cell(1, 0),
@@ -36,11 +36,11 @@ public class Constantes {
         new Cell(-2, 1)
     };
 
-    public static Cell[] getLL() {
+    public Cell[] getLL() {
         return lLBace;
     }
 
-
+    //Constantes de TBase
     private static Cell[] lRBase =
     {
         new Cell(-1, 0),
@@ -49,11 +49,11 @@ public class Constantes {
         new Cell(2, -1)
     };
 
-    public static Cell[] getLR() {
+    public Cell[] getLR() {
         return lRBase;
     }
 
-
+    //Constantes de TBase
     private static Cell[] tBase =
     {
         new Cell(-1, 0),
@@ -62,11 +62,11 @@ public class Constantes {
         new Cell(0, -1)
     };
 
-    public static Cell[] getT() {
+    public Cell[] getT() {
         return tBase;
     }
 
-
+    //Constantes de DogLBase
     private static Cell[] dogLBase =
     {
         new Cell(0, -1),
@@ -75,10 +75,11 @@ public class Constantes {
         new Cell(1, 1)
     };
 
-    public static Cell[] getDogL() {
+    public Cell[] getDogL() {
         return dogLBase;
     }
 
+    //Constantes de DogRBase
     private static Cell[] dogRBase =
     {
         new Cell(1, 0),
@@ -87,9 +88,7 @@ public class Constantes {
         new Cell(-1, -1)
     };
 
-    public static Cell[] getDogR() {
+    public Cell[] getDogR() {
         return dogRBase;
     }
-    
-
 }
