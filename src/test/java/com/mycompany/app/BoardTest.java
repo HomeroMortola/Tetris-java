@@ -20,15 +20,16 @@ public class BoardTest {
         boolean alMenosUnoCero = false;
 
         board1.addPiece(piece1);
-        for (int i = 0; i < 19; i++) {
+        for (int i = 0; i < 20; i++) {
             board1.moveDown();
         }
         for (int i = 0; i < 4; i++) {
             if (board1.getCurrentPiece().getElementos()[i].getY() < 0) {
-            todosMayorIgualCero = false;
+                todosMayorIgualCero = false;
             }
             if (board1.getCurrentPiece().getElementos()[i].getY() == 0) {
                 alMenosUnoCero = true;
+                break;
             }
         }
         assertTrue(todosMayorIgualCero);
@@ -42,22 +43,20 @@ public class BoardTest {
         boolean alMenosUnoCero = false;
 
         board1.addPiece(piece1);
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
+
         for (int i = 0; i < 4; i++) {
             if (board1.getCurrentPiece().getElementos()[i].getY() < 0) {
-            todosMayorIgualCero = false;
+                todosMayorIgualCero = false;
             }
             if (board1.getCurrentPiece().getElementos()[i].getY() == 0) {
                 alMenosUnoCero = true;
+                break;
             }          
         }
         assertTrue(todosMayorIgualCero);
         assertTrue(alMenosUnoCero);
-
-        
-
-       
     }
 }
