@@ -49,10 +49,10 @@ public class BoardTest {
         }
 
         for (int i = 0; i < 4; i++) {
-            if (board1.getCurrentPiece().getCells()[i].getY() < 0) {
+            if (board1.getCellY(i) < 0) {
                 todosMayorIgualCero = false;
             }
-            if (board1.getCurrentPiece().getCells()[i].getY() == 0) {
+            if (board1.getCellY(i) == 0) {
                 alMenosUnoCero = true;
                 break;
             }          
@@ -60,4 +60,5 @@ public class BoardTest {
         assertTrue(todosMayorIgualCero);
         assertTrue(alMenosUnoCero);
     }
+
 }
