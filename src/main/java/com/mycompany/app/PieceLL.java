@@ -1,12 +1,12 @@
 package com.mycompany.app;
 
 public class PieceLL extends PieceBase {
-    public PieceLL(int originX, int originY) {
+    public PieceLL() {
         super(
-            new Cell(originX + 1, originY),
-            new Cell(originX, originY),
-            new Cell(originX - 1, originY),
-            new Cell(originX - 2, originY + 1)
+            new Cell(1, 0),
+            new Cell(0, 0),
+            new Cell(- 1, 0),
+            new Cell(- 2, 1)
         );
     }
     

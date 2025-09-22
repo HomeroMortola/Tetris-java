@@ -1,12 +1,12 @@
 package com.mycompany.app;
 
 public class PieceDogR extends PieceBase {
-    public PieceDogR(int originX, int originY) {
+    public PieceDogR() {
         super(
-            new Cell(originX + 1, originY),
-            new Cell(originX, originY),
-            new Cell(originX - 1, originY),
-            new Cell(originX - 1, originY - 1)
+            new Cell(1, 0),
+            new Cell(0, 0),
+            new Cell(- 1, 0),
+            new Cell(- 1, - 1)
         );
     }
 }

@@ -17,20 +17,20 @@ public class PieceTest {
 
     @Test
     public void testPieceExiste() {
-        PieceBase p = new PieceSquare(0, 0);
+        PieceBase p = new PieceSquare();
         assertNotNull(p);
     }
 
     @Test
     public void testPiece4Elementos() {
-        PieceBase p = new PieceSquare(0, 0);
+        PieceBase p = new PieceSquare();
         assertTrue(p.getCells().length == 4);
     }
     
     @Test
     public void testPieceSquer() {
         Constantes constantes = new Constantes();
-        PieceBase p1 = new PieceSquare(0, 0);
+        PieceBase p1 = new PieceSquare();
         Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getCubo();
 
@@ -42,7 +42,7 @@ public class PieceTest {
     @Test
     public void testPieceStick() {
         Constantes constantes = new Constantes();
-        PieceBase p1 = new PieceStick(0, 0);
+        PieceBase p1 = new PieceStick();
         Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getStick();
 
@@ -54,7 +54,7 @@ public class PieceTest {
     @Test
     public void testPieceLR() {
         Constantes constantes = new Constantes();
-        PieceBase p1 = new PieceLR(0, 0);
+        PieceBase p1 = new PieceLR();
         Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getLR();
 
@@ -66,7 +66,7 @@ public class PieceTest {
     @Test
     public void testPieceLL() {
         Constantes constantes = new Constantes();
-        PieceBase p1 = new PieceLL(0, 0);
+        PieceBase p1 = new PieceLL();
         Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getLL();
 
@@ -78,7 +78,7 @@ public class PieceTest {
     @Test
     public void testPieceT() {
         Constantes constantes = new Constantes();
-        PieceBase p1 = new PieceT(0, 0);
+        PieceBase p1 = new PieceT();
         Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getT();
 
@@ -90,7 +90,7 @@ public class PieceTest {
     @Test
     public void testPieceDogR() {
         Constantes constantes = new Constantes();
-        PieceBase p1 = new PieceDogR(0, 0);
+        PieceBase p1 = new PieceDogR();
         Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getDogR();
 
@@ -102,7 +102,7 @@ public class PieceTest {
     @Test
     public void testPieceDogL() {
         Constantes constantes = new Constantes();
-        PieceBase p1 = new PieceDogL(0, 0);
+        PieceBase p1 = new PieceDogL();
         Cell[] cels = p1.getCells();
         Cell[] esperado = constantes.getDogL();
 

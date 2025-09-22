@@ -24,9 +24,6 @@ public class BoardTest {
             board1.moveDown();
         }
         for (int i = 0; i < 4; i++) {
-            System.out.println(board1.getCellY(i));
-            
-            
             if (board1.getCellY(i) < 0) {
                 todosMayorIgualCero = false;
             }
@@ -42,7 +39,7 @@ public class BoardTest {
     @Test
     public void testCaidaLibreSquare() {
         Board board1 = new Board(10, 20);
-        PieceBase piece1 = new PieceSquare(5,20);
+        PieceBase piece1 = new PieceSquare();
         boolean todosMayorIgualCero = true;
         boolean alMenosUnoCero = false;
 

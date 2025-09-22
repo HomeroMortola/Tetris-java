@@ -7,7 +7,7 @@ import org.junit.Test;
 public class RotateTest {
     @Test
     public void testPieceTRotateL() {
-        PieceBase p = new PieceT(0, 0);
+        PieceBase p = new PieceT();
         Object[] c = p.getCells();
         
         p.rotateLeft();
@@ -25,7 +25,7 @@ public class RotateTest {
     }
     @Test
     public void testPieceTRotateR() {
-        PieceBase p = new PieceT(0, 0);
+        PieceBase p = new PieceT();
         Object[] c = p.getCells();
         p.rotateRight();
         assertTrue(((Cell) c[0]).getX()==0);
