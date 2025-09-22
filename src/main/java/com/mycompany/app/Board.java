@@ -33,7 +33,7 @@ public class Board {
     }
 
     private void drawBoard() {
-        this.board = new int[getWidth()][getHeight()];
+        this.board = new int[getWidth()][getHeight()+3];//+3 para que las piezas puedan entrar
         for (int x = 0; x < getWidth(); x++) {
             for (int y = 0; y < getHeight(); y++) {
                 this.board[x][y] = 0;
@@ -45,7 +45,7 @@ public class Board {
         this.pieces.add(piece);
         setCurrentPiece(piece);
         setCurrentPieceX(5);
-        setCurrentPieceY(20);
+        setCurrentPieceY(19);
     }
 
     private void setCurrentPiece(PieceBase piece){
@@ -96,9 +96,17 @@ public class Board {
     public void moveDown(){
     boolean canMove = true; 
         for (int i = 0; i < 4; i++) {
-            if (getCellY(i) == 0 || board[getCellX(i)][getCellY(i) - 1] == 1) {
+            if (getCellY(i) == 0) {
                 canMove = false;
                 break; 
+            }
+        }
+        if (canMove) {
+            for (int i = 0; i < 4; i++) {
+                if (board[getCellX(i)][getCellY(i) - 1] == 1) {
+                canMove = false;
+                break; 
+                }
             }
         }
         
