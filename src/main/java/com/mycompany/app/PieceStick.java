@@ -1,12 +1,12 @@
 package com.mycompany.app;
 
 public class PieceStick extends PieceBase {
-    public PieceStick(int originX, int originY) {
+    public PieceStick() {
         super(
-            new Cell(originX, originY - 1),
-            new Cell(originX, originY),
-            new Cell(originX, originY + 1),
-            new Cell(originX, originY + 2)
+            new Cell(0, - 1),
+            new Cell(0, 0),
+            new Cell(0, 1),
+            new Cell(0, 2)
         );
     }
 }

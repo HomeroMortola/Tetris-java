@@ -9,8 +9,8 @@ public class Board {
     private int height;
     private PieceBase currentPice;
 
-
-    
+    private int currentPiceY;
+    private int currentPiceX;
 
     public Board(int width, int height) {
         setWidthHeight(width, height);
@@ -33,12 +33,21 @@ public class Board {
     public void addPiece(PieceBase piece){
         this.pieces.add(piece);
         setCurrentPiece(piece);
+        setCurrentPieceX(5);
+        setCurrentPieceY(20);
     }
 
     private void setCurrentPiece(PieceBase piece){
         this.currentPice = piece;
     }
 
+    public void setCurrentPieceX(int x){
+        this.currentPiceX = x;
+    }
+
+    public void setCurrentPieceY(int y){
+        this.currentPiceY = y;
+    }
 
     //Get para doble enc
     public int getWidth() {
@@ -57,10 +66,26 @@ public class Board {
         return this.currentPice;
     }
 
+    public int getCurrentPieceX(){
+        return this.currentPiceX;
+    }
+
+    public int getCurrentPieceY(){
+        return this.currentPiceY;
+    }
+
+    public int getCellX(int i){
+        return getCurrentPieceX() + getCurrentPiece().getCells()[i].getX();
+    }
+
+    public int getCellY(int i){
+        return getCurrentPieceY() + getCurrentPiece().getCells()[i].getY();
+    }
+
     public void moveDown(){
     boolean canMove = true; 
         for (int i = 0; i < 4; i++) {
-            if (getCurrentPiece().getCells()[i].getY() == 0) {
+            if (getCellY(i) == 0) {
                 canMove = false;
                 break; 
             }
@@ -68,9 +93,8 @@ public class Board {
         }
         
         if (canMove) { 
-            for (int i = 0; i < 4; i++) {
-                getCurrentPiece().getCells()[i].setY(getCurrentPiece().getCells()[i].getY() - 1);
-            }
+            setCurrentPieceY(getCurrentPieceY() - 1);
+            
         }
     }
     

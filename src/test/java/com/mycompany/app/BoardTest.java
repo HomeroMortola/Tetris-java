@@ -15,23 +15,27 @@ public class BoardTest {
     @Test
     public void testCaidaLibreStick() {
         Board board1 = new Board(10, 20);
-        PieceBase piece1 = new PieceStick(5,20);
+        PieceBase piece1 = new PieceStick();
         boolean todosMayorIgualCero = true;
         boolean alMenosUnoCero = false;
 
         board1.addPiece(piece1);
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
         for (int i = 0; i < 4; i++) {
-            if (board1.getCurrentPiece().getCells()[i].getY() < 0) {
+            System.out.println(board1.getCellY(i));
+            
+            
+            if (board1.getCellY(i) < 0) {
                 todosMayorIgualCero = false;
             }
-            if (board1.getCurrentPiece().getCells()[i].getY() == 0) {
+            if (board1.getCellY(i) == 0) {
                 alMenosUnoCero = true;
                 break;
             }
         }
+        
         assertTrue(todosMayorIgualCero);
         assertTrue(alMenosUnoCero);
     }
