@@ -7,6 +7,7 @@ public class Board {
     private List<PieceBase> pieces = new ArrayList<PieceBase>();
     private int width;
     private int height;
+    private int board[][];
     private PieceBase currentPice;
 
     private int currentPiceY;
@@ -20,6 +21,7 @@ public class Board {
     public void setWidthHeight(int width, int height) {
         setWidth(width);
         setHeight(height);
+        drawBoard();
     }
 
     private void setWidth(int width) {
@@ -28,6 +30,15 @@ public class Board {
 
     private void setHeight(int height) {
         this.height = height;
+    }
+
+    private void drawBoard() {
+        this.board = new int[getWidth()][getHeight()];
+        for (int x = 0; x < getWidth(); x++) {
+            for (int y = 0; y < getHeight(); y++) {
+                this.board[x][y] = 0;
+            }
+        }
     }
 
     public void addPiece(PieceBase piece){
@@ -85,16 +96,18 @@ public class Board {
     public void moveDown(){
     boolean canMove = true; 
         for (int i = 0; i < 4; i++) {
-            if (getCellY(i) == 0) {
+            if (getCellY(i) == 0 || board[getCellX(i)][getCellY(i) - 1] == 1) {
                 canMove = false;
                 break; 
             }
-            //añadir colicion luego aqui
         }
         
         if (canMove) { 
             setCurrentPieceY(getCurrentPieceY() - 1);
-            
+        } else {
+            for (int i = 0; i < 4; i++) {
+                board[getCellX(i)][getCellY(i)] = 1;
+            }
         }
     }
     
