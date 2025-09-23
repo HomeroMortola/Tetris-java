@@ -7,7 +7,7 @@ public class Board {
     private List<PieceBase> pieces = new ArrayList<PieceBase>();
     private int width;
     private int height;
-    private int board[][];
+    private int grid[][];
     private PieceBase currentPice;
 
     private int currentPiceY;
@@ -21,7 +21,7 @@ public class Board {
     public void setWidthHeight(int width, int height) {
         setWidth(width);
         setHeight(height);
-        drawBoard();
+        drawGrid();
     }
 
     private void setWidth(int width) {
@@ -44,8 +44,8 @@ public class Board {
         this.currentPiceY = y;
     }
 
-    private void setBoard(int[][] board){
-        this.board = board;
+    private void setGrid(int[][] grid){
+        this.grid = grid;
     }
 
     //Get para doble enc
@@ -81,8 +81,8 @@ public class Board {
         return getCurrentPieceY() + getCurrentPiece().getCells()[i].getY();
     }
 
-    public int[][] getBoard(){
-        return this.board;
+    public int[][] getgrid(){
+        return this.grid;
     }
 
 
@@ -93,14 +93,14 @@ public class Board {
         setCurrentPieceY(20);
     }
 
-    private void drawBoard() {
-        board = new int[getWidth()][getHeight()+3];//+3 para que las piezas puedan entrar
+    private void drawGrid() {
+        grid = new int[getWidth()][getHeight()+3];//+3 para que las piezas puedan entrar
         for (int x = 0; x < getWidth(); x++) {
             for (int y = 0; y < getHeight(); y++) {
-                board[x][y] = 0;
+                grid[x][y] = 0;
             }
         }
-        setBoard(board);
+        setGrid(grid);
     }
 
     public void moveDown(){
@@ -113,7 +113,7 @@ public class Board {
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (board[getCurrentCellX(i)][getCurrentCellY(i) - 1] == 1) {
+                if (getgrid()[getCurrentCellX(i)][getCurrentCellY(i) - 1] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -124,9 +124,12 @@ public class Board {
             setCurrentPieceY(getCurrentPieceY() - 1);
         } else {
             for (int i = 0; i < 4; i++) {
-                board[getCurrentCellX(i)][getCurrentCellY(i)] = 1;
-                setBoard(board);
+                grid[getCurrentCellX(i)][getCurrentCellY(i)] = 1;
+                setGrid(grid);
+                
             }
+            EliminarLinea();
+            setCurrentPiece(null);
         }
     }
 
@@ -140,7 +143,7 @@ public class Board {
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (board[getCurrentCellX(i) - 1][getCurrentCellY(i)] == 1) {
+                if (getgrid()[getCurrentCellX(i) - 1][getCurrentCellY(i)] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -162,7 +165,7 @@ public class Board {
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (board[getCurrentCellX(i) + 1][getCurrentCellY(i)] == 1) {
+                if (getgrid()[getCurrentCellX(i) + 1][getCurrentCellY(i)] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -172,6 +175,30 @@ public class Board {
         if (canMove) { 
             setCurrentPieceX(getCurrentPieceX() + 1);
         }
+    }
+
+    public void EliminarLinea(){
+        for(int y = 0; y < getHeight(); y++){
+            boolean lineaCompleta = true;
+            for(int x = 0; x < getWidth(); x++){
+                if(getgrid()[x][y] == 0){
+                    lineaCompleta = false;
+                    break;
+                }
+            }
+            if(lineaCompleta){
+                for(int RemplazarY = y; RemplazarY < getHeight() - 1; RemplazarY++){
+                    for(int x = 0; x < getWidth(); x++){
+                        grid[x][RemplazarY] = grid[x][RemplazarY + 1];
+                    }
+                }
+                for(int x = 0; x < getWidth(); x++){
+                    grid[x][getHeight() - 1] = 0;
+                }
+                y--; // Re-evaluar la misma línea después de eliminarla
+            }
+        }
+
     }
 
     
