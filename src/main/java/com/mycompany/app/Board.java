@@ -129,7 +129,6 @@ public class Board {
                 
             }
             EliminarLinea();
-            setCurrentPiece(null);
         }
     }
 

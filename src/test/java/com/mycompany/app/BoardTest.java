@@ -150,4 +150,69 @@ public class BoardTest {
         assertTrue(board1.getCurrentCellX(3)==2);
         
     }
+
+
+    @Test 
+    public void testEliminarLinea() {
+        Board board1 = new Board(10, 20);
+        PieceBase piece1 = new PieceSquare();
+        PieceBase piece2 = new PieceSquare();
+        PieceBase piece3 = new PieceSquare();
+        PieceBase piece4 = new PieceSquare();
+        PieceBase piece5 = new PieceSquare();
+        
+        
+        board1.addPiece(piece1);
+        for (int i = 0; i < 5; i++) {
+            board1.moveLeft();
+        }
+        
+        for (int i = 0; i < 40; i++) {
+            board1.moveDown();
+        }
+
+        board1.addPiece(piece2);
+        for (int i = 0; i < 3; i++) {
+            board1.moveLeft();
+        }
+        for (int i = 0; i < 40; i++) {
+            board1.moveDown();
+        }
+        
+        board1.addPiece(piece3);
+        for (int i = 0; i < 1; i++) {
+            board1.moveLeft();
+        }
+        for (int i = 0; i < 40; i++) {
+            board1.moveDown();
+        }
+        
+        board1.addPiece(piece4);
+        for (int i = 0; i < 1; i++) {
+            board1.moveRight();
+        }
+        for (int i = 0; i < 40; i++) {
+            board1.moveDown();
+            
+        }
+        
+        board1.addPiece(piece5);
+        for (int i = 0; i < 3; i++) {
+            board1.moveRight();
+        }
+        for (int i = 0; i < 21; i++) {//21, porque el codigo de momento no no premite segur vajando hasta que se seleccione una nueva piesa 
+            board1.moveDown();
+        }
+        
+        assertTrue(board1.getgrid()[0][0]==0); 
+        assertTrue(board1.getgrid()[1][0]==0);
+        assertTrue(board1.getgrid()[2][0]==0);
+        assertTrue(board1.getgrid()[3][0]==0);
+        assertTrue(board1.getgrid()[4][0]==0);
+        assertTrue(board1.getgrid()[5][0]==0);
+        assertTrue(board1.getgrid()[6][0]==0);
+        assertTrue(board1.getgrid()[7][0]==0); 
+        assertTrue(board1.getgrid()[8][0]==0);
+        assertTrue(board1.getgrid()[9][0]==0);        
+    }
 }
