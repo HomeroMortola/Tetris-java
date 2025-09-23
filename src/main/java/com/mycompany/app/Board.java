@@ -32,32 +32,20 @@ public class Board {
         this.height = height;
     }
 
-    private void drawBoard() {
-        this.board = new int[getWidth()][getHeight()+3];//+3 para que las piezas puedan entrar
-        for (int x = 0; x < getWidth(); x++) {
-            for (int y = 0; y < getHeight(); y++) {
-                this.board[x][y] = 0;
-            }
-        }
-    }
-
-    public void addPiece(PieceBase piece){
-        this.pieces.add(piece);
-        setCurrentPiece(piece);
-        setCurrentPieceX(5);
-        setCurrentPieceY(20);
-    }
-
     private void setCurrentPiece(PieceBase piece){
         this.currentPice = piece;
     }
 
-    public void setCurrentPieceX(int x){
+    private void setCurrentPieceX(int x){
         this.currentPiceX = x;
     }
 
-    public void setCurrentPieceY(int y){
+    private void setCurrentPieceY(int y){
         this.currentPiceY = y;
+    }
+
+    private void setBoard(int[][] board){
+        this.board = board;
     }
 
     //Get para doble enc
@@ -93,6 +81,28 @@ public class Board {
         return getCurrentPieceY() + getCurrentPiece().getCells()[i].getY();
     }
 
+    public int[][] getBoard(){
+        return this.board;
+    }
+
+
+    public void addPiece(PieceBase piece){
+        this.pieces.add(piece);
+        setCurrentPiece(piece);
+        setCurrentPieceX(5);
+        setCurrentPieceY(20);
+    }
+
+    private void drawBoard() {
+        board = new int[getWidth()][getHeight()+3];//+3 para que las piezas puedan entrar
+        for (int x = 0; x < getWidth(); x++) {
+            for (int y = 0; y < getHeight(); y++) {
+                board[x][y] = 0;
+            }
+        }
+        setBoard(board);
+    }
+
     public void moveDown(){
     boolean canMove = true; 
         for (int i = 0; i < 4; i++) {
@@ -115,9 +125,57 @@ public class Board {
         } else {
             for (int i = 0; i < 4; i++) {
                 board[getCellX(i)][getCellY(i)] = 1;
+                setBoard(board);
             }
         }
     }
+
+    public void moveLeft(){
+        boolean canMove = true; 
+        for (int i = 0; i < 4; i++) {
+            if (getCellX(i) == 0){
+                canMove = false;
+                break; 
+            }
+        }
+        if (canMove) {
+            for (int i = 0; i < 4; i++) {
+                if (board[getCellX(i) - 1][getCellY(i)] == 1) {
+                canMove = false;
+                break; 
+                }
+            }
+        }
+        
+        if (canMove) { 
+            setCurrentPieceX(getCurrentPieceX() - 1);
+        }
+    }
+
+    public void moveRight(){
+        boolean canMove = true; 
+        for (int i = 0; i < 4; i++) {
+            if (getCellX(i) == getWidth() - 1){
+                canMove = false;
+                break; 
+            }
+        }
+        if (canMove) {
+            for (int i = 0; i < 4; i++) {
+                if (board[getCellX(i) + 1][getCellY(i)] == 1) {
+                canMove = false;
+                break; 
+                }
+            }
+        }
+        
+        if (canMove) { 
+            setCurrentPieceX(getCurrentPieceX() + 1);
+        }
+    }
+
+
+
     
 
 

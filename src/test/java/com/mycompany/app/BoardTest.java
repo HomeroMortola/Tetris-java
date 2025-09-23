@@ -60,6 +60,7 @@ public class BoardTest {
         assertTrue(todosMayorIgualCero);
         assertTrue(alMenosUnoCero);
     }
+
     @Test
     public void testColision() {
         Board board1 = new Board(10, 20);
@@ -81,4 +82,72 @@ public class BoardTest {
         assertTrue(board1.getCellY(3)==5);         
     }
 
+    @Test
+    public void testColision2() {
+        Board board1 = new Board(10, 20);
+        PieceBase piece1 = new PieceSquare();
+        PieceBase piece2 = new PieceLL();
+
+        board1.addPiece(piece1);
+        for (int i = 0; i < 40; i++) {
+            board1.moveDown();
+        }
+
+        board1.addPiece(piece2);
+        for (int i = 0; i < 40; i++) {
+            board1.moveDown();
+        }
+        assertTrue(board1.getCellY(0)==2);
+        assertTrue(board1.getCellY(1)==2);
+        assertTrue(board1.getCellY(2)==2);
+        assertTrue(board1.getCellY(3)==3);         
+    }
+
+    @Test
+    public void testMovimientoHorizontal() {
+        Board board1 = new Board(10, 20);
+        PieceBase piece1 = new PieceSquare();
+        PieceBase piece2 = new PieceSquare();
+        PieceBase piece3 = new PieceLL();
+        board1.addPiece(piece1);
+
+        for (int i = 0; i < 40; i++) {
+            board1.moveLeft();
+        }
+        for (int i = 0; i < 40; i++) {
+            board1.moveDown();
+        }
+
+        assertTrue(board1.getCellX(0)==0); 
+        assertTrue(board1.getCellX(1)==1);
+        assertTrue(board1.getCellX(2)==0);
+        assertTrue(board1.getCellX(3)==1);
+
+        board1.addPiece(piece2);
+
+        for (int i = 0; i < 40; i++) {
+            board1.moveLeft();
+        }
+
+        for (int i = 0; i < 40; i++) {
+            board1.moveDown();
+        }
+        
+        
+        board1.addPiece(piece3);
+
+        for (int i = 0; i < 18; i++) {
+            board1.moveDown();
+        }
+        
+        for (int i = 0; i < 10; i++) {
+            board1.moveLeft();
+        }
+        
+        assertTrue(board1.getCellX(0)==4); 
+        assertTrue(board1.getCellX(1)==3);
+        assertTrue(board1.getCellX(2)==2);
+        assertTrue(board1.getCellX(3)==2);
+        
+    }
 }
