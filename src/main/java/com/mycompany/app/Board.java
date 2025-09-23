@@ -73,11 +73,11 @@ public class Board {
         return this.currentPiceY;
     }
 
-    public int getCellX(int i){
+    public int getCurrentCellX(int i){
         return getCurrentPieceX() + getCurrentPiece().getCells()[i].getX();
     }
 
-    public int getCellY(int i){
+    public int getCurrentCellY(int i){
         return getCurrentPieceY() + getCurrentPiece().getCells()[i].getY();
     }
 
@@ -106,14 +106,14 @@ public class Board {
     public void moveDown(){
     boolean canMove = true; 
         for (int i = 0; i < 4; i++) {
-            if (getCellY(i) == 0) {
+            if (getCurrentCellY(i) == 0) {
                 canMove = false;
                 break; 
             }
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (board[getCellX(i)][getCellY(i) - 1] == 1) {
+                if (board[getCurrentCellX(i)][getCurrentCellY(i) - 1] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -124,7 +124,7 @@ public class Board {
             setCurrentPieceY(getCurrentPieceY() - 1);
         } else {
             for (int i = 0; i < 4; i++) {
-                board[getCellX(i)][getCellY(i)] = 1;
+                board[getCurrentCellX(i)][getCurrentCellY(i)] = 1;
                 setBoard(board);
             }
         }
@@ -133,14 +133,14 @@ public class Board {
     public void moveLeft(){
         boolean canMove = true; 
         for (int i = 0; i < 4; i++) {
-            if (getCellX(i) == 0){
+            if (getCurrentCellX(i) == 0){
                 canMove = false;
                 break; 
             }
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (board[getCellX(i) - 1][getCellY(i)] == 1) {
+                if (board[getCurrentCellX(i) - 1][getCurrentCellY(i)] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -155,14 +155,14 @@ public class Board {
     public void moveRight(){
         boolean canMove = true; 
         for (int i = 0; i < 4; i++) {
-            if (getCellX(i) == getWidth() - 1){
+            if (getCurrentCellX(i) == getWidth() - 1){
                 canMove = false;
                 break; 
             }
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (board[getCellX(i) + 1][getCellY(i)] == 1) {
+                if (board[getCurrentCellX(i) + 1][getCurrentCellY(i)] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -173,6 +173,8 @@ public class Board {
             setCurrentPieceX(getCurrentPieceX() + 1);
         }
     }
+
+    
 
 
 
