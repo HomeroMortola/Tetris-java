@@ -45,7 +45,7 @@ public class Board {
         this.pieces.add(piece);
         setCurrentPiece(piece);
         setCurrentPieceX(5);
-        setCurrentPieceY(19);
+        setCurrentPieceY(20);
     }
 
     private void setCurrentPiece(PieceBase piece){
@@ -133,12 +133,4 @@ public class Board {
     public void lineConunt(){
     }
 
-
-
-
-
-
-    
-
-    
 }
