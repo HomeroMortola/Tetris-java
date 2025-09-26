@@ -203,16 +203,16 @@ public class BoardTest {
         for (int i = 0; i < 21; i++) {//21, porque el codigo de momento no no premite segur vajando hasta que se seleccione una nueva piesa 
             board1.moveDown();
         }    
-        assertTrue(board1.getFrid()[0][0]==0); 
-        assertTrue(board1.getFrid()[1][0]==0);
-        assertTrue(board1.getFrid()[2][0]==0);
-        assertTrue(board1.getFrid()[3][0]==0);
-        assertTrue(board1.getFrid()[4][0]==0);
-        assertTrue(board1.getFrid()[5][0]==0);
-        assertTrue(board1.getFrid()[6][0]==0);
-        assertTrue(board1.getFrid()[7][0]==0); 
-        assertTrue(board1.getFrid()[8][0]==0);
-        assertTrue(board1.getFrid()[9][0]==0); 
+        assertTrue(board1.getGrid()[0][0]==0); 
+        assertTrue(board1.getGrid()[1][0]==0);
+        assertTrue(board1.getGrid()[2][0]==0);
+        assertTrue(board1.getGrid()[3][0]==0);
+        assertTrue(board1.getGrid()[4][0]==0);
+        assertTrue(board1.getGrid()[5][0]==0);
+        assertTrue(board1.getGrid()[6][0]==0);
+        assertTrue(board1.getGrid()[7][0]==0); 
+        assertTrue(board1.getGrid()[8][0]==0);
+        assertTrue(board1.getGrid()[9][0]==0); 
 
 
 
@@ -221,8 +221,8 @@ public class BoardTest {
             board1.moveDown();
         }
         
-        assertTrue(board1.getFrid()[5][0]==1);
-        assertTrue(board1.getFrid()[6][0]==1);
+        assertTrue(board1.getGrid()[5][0]==1);
+        assertTrue(board1.getGrid()[6][0]==1);
 
         assertTrue(board1.lineCount()==2);
     }

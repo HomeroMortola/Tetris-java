@@ -82,7 +82,7 @@ public class Board {
         return getCurrentPieceY() + getCurrentPiece().getCells()[i].getY();
     }
 
-    public int[][] getFrid(){
+    public int[][] getGrid(){
         return this.grid;
     }
 
@@ -128,7 +128,7 @@ public class Board {
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (getFrid()[getCurrentCellX(i)][getCurrentCellY(i) - 1] == 1) {
+                if (getGrid()[getCurrentCellX(i)][getCurrentCellY(i) - 1] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -157,7 +157,7 @@ public class Board {
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (getFrid()[getCurrentCellX(i) - 1][getCurrentCellY(i)] == 1) {
+                if (getGrid()[getCurrentCellX(i) - 1][getCurrentCellY(i)] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -179,7 +179,7 @@ public class Board {
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (getFrid()[getCurrentCellX(i) + 1][getCurrentCellY(i)] == 1) {
+                if (getGrid()[getCurrentCellX(i) + 1][getCurrentCellY(i)] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -196,7 +196,7 @@ public class Board {
         for(int y = 0; y < getHeight(); y++){
             boolean lineaCompleta = true;
             for(int x = 0; x < getWidth(); x++){
-                if(getFrid()[x][y] == 0){
+                if(getGrid()[x][y] == 0){
                     lineaCompleta = false;
                     break;
                 }
@@ -233,8 +233,45 @@ public class Board {
         
     }
     
+    //Método para COMPROBAR (no rotar) si una pieza se puede rotar (a la izquierda o a la derecha)
+    //Usé una especie de "simulación" de la rotación para comprobar si se puede o no
+    public boolean canRotate(PieceBase piece, boolean left) {
+        Cell[] cells = piece.getCells();
+        int centerX = cells[1].getX();
+        int centerY = cells[1].getY();
 
-    
-    
+        for (Cell cell : cells) {
+            int x = cell.getX() - centerX;
+            int y = cell.getY() - centerY;
 
+            int newX = left ? -y : y;
+            int newY = left ? x : -x;
+
+            int boardX = getCurrentPieceX() + centerX + newX;
+            int boardY = getCurrentPieceY() + centerY + newY;
+
+            // Verifica límites
+            if (boardX < 0 || boardX >= getWidth() || boardY < 0 || boardY >= getHeight()) {
+                return false;
+            }
+            // Verifica colisión con otras piezas
+            if (getGrid()[boardX][boardY] == 1) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    //Métodos para rotar la pieza actual (una vez comprobado)
+    public void rotateCurrentPieceLeft() {
+        if (canRotate(getCurrentPiece(), true)) {
+            getCurrentPiece().rotateLeft();
+        }
+    }
+
+    public void rotateCurrentPieceRight() {
+        if (canRotate(getCurrentPiece(), false)) {
+            getCurrentPiece().rotateRight();
+        }
+    }
 }
