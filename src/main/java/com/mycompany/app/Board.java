@@ -86,7 +86,8 @@ public class Board {
         return this.grid;
     }
 
-
+    //Método para añadir piezas al tablero (además de comprobar si se pueden añadir, caso de que se pueda, lo añade 
+    //y posiciona en el centro arriba)
     public void addPiece(PieceBase piece){
         boolean canAdd = true;
         for (int x = 0; x < getWidth(); x++) {
@@ -105,6 +106,7 @@ public class Board {
         }
     }
 
+    //Método para dibujar la cuadrícula del tablero
     private void drawGrid() {
         grid = new int[getWidth()][getHeight()+3];//+3 para que las piezas puedan entrar
         for (int x = 0; x < getWidth(); x++) {
@@ -115,6 +117,7 @@ public class Board {
         setGrid(grid);
     }
 
+    //Métodos para mover las piezas (comprobando si se pueden mover o no)
     public void moveDown(){
     boolean canMove = true; 
         for (int i = 0; i < 4; i++) {
@@ -188,6 +191,7 @@ public class Board {
         }
     }
 
+    //Método para eliminar líneas completas y desplazar las demás hacia abajo
     public void EliminarLinea(){
         for(int y = 0; y < getHeight(); y++){
             boolean lineaCompleta = true;
@@ -212,6 +216,7 @@ public class Board {
         }
     }
 
+    //Método para obtener la cantidad de líneas eliminadas
     public int lineCount(){
         return lineasCompletadas;
     }
