@@ -230,14 +230,15 @@ public class BoardTest {
     @Test
     public void TestnoAgrega(){
         Board board1 = new Board(10, 20);
-        PieceBase piecees[] = new PieceBase[5];
+        PieceBase piecees[] = new PieceBase[6];
         piecees[0] = new PieceStick();
         piecees[1] = new PieceStick();
         piecees[2] = new PieceStick();
         piecees[3] = new PieceStick();
         piecees[4] = new PieceStick();
+        piecees[5] = new PieceStick();
         
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             board1.addPiece(piecees[i]);
             for(int j = 0; j < 20; j++ ){
                 board1.moveDown();

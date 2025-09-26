@@ -114,6 +114,9 @@ public class Board {
             setCurrentPieceX(5);
             setCurrentPieceY(20);
             
+        }else
+        {
+            setGameState(3);
         }
         
     }
@@ -156,7 +159,7 @@ public class Board {
                 
             }
             EliminarLinea();
-            setGameState(3);
+            
         }
     }
 
