@@ -54,6 +54,4 @@ public class Tetris {
     public void rotateRight(){
         getBoard().getCurrentPiece().rotateRight();
     }
-
-    
 }
