@@ -160,6 +160,7 @@ public class BoardTest {
         PieceBase piece3 = new PieceSquare();
         PieceBase piece4 = new PieceSquare();
         PieceBase piece5 = new PieceSquare();
+        PieceBase piece6 = new PieceSquare();
         
         
         board1.addPiece(piece1);
@@ -192,8 +193,7 @@ public class BoardTest {
             board1.moveRight();
         }
         for (int i = 0; i < 40; i++) {
-            board1.moveDown();
-            
+            board1.moveDown();   
         }
         
         board1.addPiece(piece5);
@@ -202,17 +202,53 @@ public class BoardTest {
         }
         for (int i = 0; i < 21; i++) {//21, porque el codigo de momento no no premite segur vajando hasta que se seleccione una nueva piesa 
             board1.moveDown();
+        }    
+        assertTrue(board1.getFrid()[0][0]==0); 
+        assertTrue(board1.getFrid()[1][0]==0);
+        assertTrue(board1.getFrid()[2][0]==0);
+        assertTrue(board1.getFrid()[3][0]==0);
+        assertTrue(board1.getFrid()[4][0]==0);
+        assertTrue(board1.getFrid()[5][0]==0);
+        assertTrue(board1.getFrid()[6][0]==0);
+        assertTrue(board1.getFrid()[7][0]==0); 
+        assertTrue(board1.getFrid()[8][0]==0);
+        assertTrue(board1.getFrid()[9][0]==0); 
+
+
+
+        board1.addPiece(piece6); 
+        for (int i = 0; i < 21; i++) {
+            board1.moveDown();
         }
         
-        assertTrue(board1.getgrid()[0][0]==0); 
-        assertTrue(board1.getgrid()[1][0]==0);
-        assertTrue(board1.getgrid()[2][0]==0);
-        assertTrue(board1.getgrid()[3][0]==0);
-        assertTrue(board1.getgrid()[4][0]==0);
-        assertTrue(board1.getgrid()[5][0]==0);
-        assertTrue(board1.getgrid()[6][0]==0);
-        assertTrue(board1.getgrid()[7][0]==0); 
-        assertTrue(board1.getgrid()[8][0]==0);
-        assertTrue(board1.getgrid()[9][0]==0);        
+        assertTrue(board1.getFrid()[5][0]==1);
+        assertTrue(board1.getFrid()[6][0]==1);
+
+        assertTrue(board1.lineCount()==2);
     }
+
+
+
+
+
+
+
+
+    /* 
+    @Test
+    public void noAgrega(){
+        Board board1 = new Board(10, 20);
+        PieceBase piecees[] = new PieceBase[5];
+        PieceBase piece1 = new PieceStick();
+        PieceBase piece2 = new PieceStick();
+        PieceBase piece3 = new PieceStick();
+        PieceBase piece4 = new PieceStick();
+        PieceBase piece5 = new PieceStick();
+        piecees = {piece1,piece2};
+    }
+    */
+    
+
+    
+
 }

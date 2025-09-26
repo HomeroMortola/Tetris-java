@@ -9,6 +9,7 @@ public class Board {
     private int height;
     private int grid[][];
     private PieceBase currentPice;
+    private int lineasCompletadas;
 
     private int currentPiceY;
     private int currentPiceX;
@@ -81,16 +82,27 @@ public class Board {
         return getCurrentPieceY() + getCurrentPiece().getCells()[i].getY();
     }
 
-    public int[][] getgrid(){
+    public int[][] getFrid(){
         return this.grid;
     }
 
 
     public void addPiece(PieceBase piece){
-        this.pieces.add(piece);
-        setCurrentPiece(piece);
-        setCurrentPieceX(5);
-        setCurrentPieceY(20);
+        boolean canAdd = true;
+        for (int x = 0; x < getWidth(); x++) {
+            for (int y = 17; y < getHeight(); y++) {
+                if (grid[x][y] == 1) {
+                    canAdd = false;
+                }
+            }
+        }
+        if(canAdd)
+        {
+            this.pieces.add(piece);
+            setCurrentPiece(piece);
+            setCurrentPieceX(5);
+            setCurrentPieceY(20);
+        }
     }
 
     private void drawGrid() {
@@ -113,7 +125,7 @@ public class Board {
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (getgrid()[getCurrentCellX(i)][getCurrentCellY(i) - 1] == 1) {
+                if (getFrid()[getCurrentCellX(i)][getCurrentCellY(i) - 1] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -142,7 +154,7 @@ public class Board {
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (getgrid()[getCurrentCellX(i) - 1][getCurrentCellY(i)] == 1) {
+                if (getFrid()[getCurrentCellX(i) - 1][getCurrentCellY(i)] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -164,7 +176,7 @@ public class Board {
         }
         if (canMove) {
             for (int i = 0; i < 4; i++) {
-                if (getgrid()[getCurrentCellX(i) + 1][getCurrentCellY(i)] == 1) {
+                if (getFrid()[getCurrentCellX(i) + 1][getCurrentCellY(i)] == 1) {
                 canMove = false;
                 break; 
                 }
@@ -180,7 +192,7 @@ public class Board {
         for(int y = 0; y < getHeight(); y++){
             boolean lineaCompleta = true;
             for(int x = 0; x < getWidth(); x++){
-                if(getgrid()[x][y] == 0){
+                if(getFrid()[x][y] == 0){
                     lineaCompleta = false;
                     break;
                 }
@@ -195,12 +207,14 @@ public class Board {
                     grid[x][getHeight() - 1] = 0;
                 }
                 y--; // Re-evaluar la misma línea después de eliminarla
+                lineasCompletadas++;
             }
         }
-
     }
 
-    
+    public int lineCount(){
+        return lineasCompletadas;
+    }
 
 
 
@@ -215,8 +229,7 @@ public class Board {
     }
     
 
-    //INCOMPLETO
-    public void lineConunt(){
-    }
+    
+    
 
 }
