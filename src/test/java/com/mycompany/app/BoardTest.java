@@ -19,7 +19,7 @@ public class BoardTest {
         boolean todosMayorIgualCero = true;
         boolean alMenosUnoCero = false;
 
-        board1.addPiece(piece1);
+        board1.addPiece(piece1,5);
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
@@ -43,7 +43,7 @@ public class BoardTest {
         boolean todosMayorIgualCero = true;
         boolean alMenosUnoCero = false;
 
-        board1.addPiece(piece1);
+        board1.addPiece(piece1,5);
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
@@ -67,12 +67,12 @@ public class BoardTest {
         PieceBase piece1 = new PieceSquare();
         PieceBase piece2 = new PieceStick();
 
-        board1.addPiece(piece1);
+        board1.addPiece(piece1,5);
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
 
-        board1.addPiece(piece2);
+        board1.addPiece(piece2,5);
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
@@ -88,12 +88,12 @@ public class BoardTest {
         PieceBase piece1 = new PieceSquare();
         PieceBase piece2 = new PieceLL();
 
-        board1.addPiece(piece1);
+        board1.addPiece(piece1,5);
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
 
-        board1.addPiece(piece2);
+        board1.addPiece(piece2,5);
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
@@ -109,7 +109,7 @@ public class BoardTest {
         PieceBase piece1 = new PieceSquare();
         PieceBase piece2 = new PieceSquare();
         PieceBase piece3 = new PieceLL();
-        board1.addPiece(piece1);
+        board1.addPiece(piece1,5);
 
         for (int i = 0; i < 40; i++) {
             board1.moveLeft();
@@ -123,7 +123,7 @@ public class BoardTest {
         assertTrue(board1.getCurrentCellX(2)==0);
         assertTrue(board1.getCurrentCellX(3)==1);
 
-        board1.addPiece(piece2);
+        board1.addPiece(piece2,5);
 
         for (int i = 0; i < 40; i++) {
             board1.moveLeft();
@@ -134,7 +134,7 @@ public class BoardTest {
         }
         
         
-        board1.addPiece(piece3);
+        board1.addPiece(piece3,5);
 
         for (int i = 0; i < 18; i++) {
             board1.moveDown();
@@ -163,7 +163,7 @@ public class BoardTest {
         PieceBase piece6 = new PieceSquare();
         
         
-        board1.addPiece(piece1);
+        board1.addPiece(piece1,5);
         for (int i = 0; i < 5; i++) {
             board1.moveLeft();
         }
@@ -172,7 +172,7 @@ public class BoardTest {
             board1.moveDown();
         }
 
-        board1.addPiece(piece2);
+        board1.addPiece(piece2,5);
         for (int i = 0; i < 3; i++) {
             board1.moveLeft();
         }
@@ -180,7 +180,7 @@ public class BoardTest {
             board1.moveDown();
         }
         
-        board1.addPiece(piece3);
+        board1.addPiece(piece3,5);
         for (int i = 0; i < 1; i++) {
             board1.moveLeft();
         }
@@ -188,7 +188,7 @@ public class BoardTest {
             board1.moveDown();
         }
         
-        board1.addPiece(piece4);
+        board1.addPiece(piece4,5);
         for (int i = 0; i < 1; i++) {
             board1.moveRight();
         }
@@ -196,7 +196,7 @@ public class BoardTest {
             board1.moveDown();   
         }
         
-        board1.addPiece(piece5);
+        board1.addPiece(piece5,5);
         for (int i = 0; i < 3; i++) {
             board1.moveRight();
         }
@@ -216,7 +216,7 @@ public class BoardTest {
 
 
 
-        board1.addPiece(piece6); 
+        board1.addPiece(piece6,5); 
         for (int i = 0; i < 21; i++) {
             board1.moveDown();
         }
@@ -239,7 +239,7 @@ public class BoardTest {
         piecees[5] = new PieceStick();
         
         for (int i = 0; i < 6; i++) {
-            board1.addPiece(piecees[i]);
+            board1.addPiece(piecees[i],5);
             for(int j = 0; j < 20; j++ ){
                 board1.moveDown();
             }

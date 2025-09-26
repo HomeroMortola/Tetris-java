@@ -98,7 +98,7 @@ public class Board {
 
     //Método para añadir piezas al tablero (además de comprobar si se pueden añadir, caso de que se pueda, lo añade 
     //y posiciona en el centro arriba)
-    public void addPiece(PieceBase piece){
+    public void addPiece(PieceBase piece, int columna){
         boolean canAdd = true;
         for (int x = 0; x < getWidth(); x++) {
             for (int y = 17; y < getHeight(); y++) {
@@ -111,7 +111,7 @@ public class Board {
         {
             this.pieces.add(piece);
             setCurrentPiece(piece);
-            setCurrentPieceX(5);
+            setCurrentPieceX(columna);
             setCurrentPieceY(20);
             
         }else
@@ -119,6 +119,23 @@ public class Board {
             setGameState(3);
         }
         
+    }
+
+    public void addRandomPiece(){
+        int columna = (int)(Math.random() * 6) + 2;
+        PieceBase piece = null;
+        int opcion = (int)(Math.random() * 7) + 1;
+        switch (opcion) {
+            case 1: piece = new PieceDogL(); break;
+            case 2: piece = new PieceDogR(); break;
+            case 3: piece = new PieceLL(); break;
+            case 4: piece = new PieceLR(); break;
+            case 5: piece = new PieceSquare(); break;
+            case 6: piece = new PieceStick(); break;
+            case 7: piece = new PieceT(); break;
+        }
+        addPiece(piece, columna);
+
     }
 
     //Método para dibujar la cuadrícula del tablero
@@ -235,18 +252,6 @@ public class Board {
     //Método para obtener la cantidad de líneas eliminadas
     public int lineCount(){
         return lineasCompletadas;
-    }
-
-
-
-    
-
-
-    //INCOMPLETO
-    public void tick(){
-        
-        moveDown();
-        
     }
     
     //Método para COMPROBAR (no rotar) si una pieza se puede rotar (a la izquierda o a la derecha)

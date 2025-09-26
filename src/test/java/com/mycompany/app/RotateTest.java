@@ -45,7 +45,7 @@ public class RotateTest {
     public void testCollisionOnRotateLeft() {
         Board board = new Board(10, 20);
         PieceBase piece = new PieceT();
-        board.addPiece(piece);
+        board.addPiece(piece,5);
 
         //Crea una sola celda que ocupe la posición donde la pieza rotaría
         int[][] grid = board.getGrid();
@@ -63,7 +63,7 @@ public class RotateTest {
     public void testCollisionOnRotateRight() {
         Board board = new Board(10, 20);
         PieceBase piece = new PieceT();
-        board.addPiece(piece);
+        board.addPiece(piece,5);
 
         int[][] grid = board.getGrid();
         int x = board.getCurrentPieceX() + 0;
