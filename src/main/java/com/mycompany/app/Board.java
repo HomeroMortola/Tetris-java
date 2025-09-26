@@ -10,12 +10,13 @@ public class Board {
     private int grid[][];
     private PieceBase currentPice;
     private int lineasCompletadas;
-
     private int currentPiceY;
     private int currentPiceX;
+    private int gameState; //1 = jugando, 2 = gano, 3 = perdio
 
     public Board(int width, int height) {
         setWidthHeight(width, height);
+        setGameState(1);
     }
 
     //Set para doble encapsulamiento
@@ -47,6 +48,10 @@ public class Board {
 
     private void setGrid(int[][] grid){
         this.grid = grid;
+    }
+
+    private void setGameState(int state){
+        this.gameState = state;
     }
 
     //Get para doble enc
@@ -86,6 +91,11 @@ public class Board {
         return this.grid;
     }
 
+    public int getGameState(){
+        return gameState;
+    }
+
+
     //Método para añadir piezas al tablero (además de comprobar si se pueden añadir, caso de que se pueda, lo añade 
     //y posiciona en el centro arriba)
     public void addPiece(PieceBase piece){
@@ -103,7 +113,9 @@ public class Board {
             setCurrentPiece(piece);
             setCurrentPieceX(5);
             setCurrentPieceY(20);
+            
         }
+        
     }
 
     //Método para dibujar la cuadrícula del tablero
@@ -144,6 +156,7 @@ public class Board {
                 
             }
             EliminarLinea();
+            setGameState(3);
         }
     }
 

@@ -226,27 +226,26 @@ public class BoardTest {
 
         assertTrue(board1.lineCount()==2);
     }
-
-
-
-
-
-
-
-
-    /* 
+     
     @Test
-    public void noAgrega(){
+    public void TestnoAgrega(){
         Board board1 = new Board(10, 20);
         PieceBase piecees[] = new PieceBase[5];
-        PieceBase piece1 = new PieceStick();
-        PieceBase piece2 = new PieceStick();
-        PieceBase piece3 = new PieceStick();
-        PieceBase piece4 = new PieceStick();
-        PieceBase piece5 = new PieceStick();
-        piecees = {piece1,piece2};
+        piecees[0] = new PieceStick();
+        piecees[1] = new PieceStick();
+        piecees[2] = new PieceStick();
+        piecees[3] = new PieceStick();
+        piecees[4] = new PieceStick();
+        
+        for (int i = 0; i < 5; i++) {
+            board1.addPiece(piecees[i]);
+            for(int j = 0; j < 20; j++ ){
+                board1.moveDown();
+            }
+        }
+        assertTrue(board1.getGameState() == 3);
     }
-    */
+    
     
 
     
