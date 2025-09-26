@@ -6,7 +6,7 @@ public class PieceLR extends PieceBase {
             new Cell(- 1, 0),
             new Cell(0, 0),
             new Cell(1, 0),
-            new Cell(2, - 1)
+            new Cell(1, - 1)
         );
     }
     

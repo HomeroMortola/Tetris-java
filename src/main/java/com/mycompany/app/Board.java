@@ -13,10 +13,18 @@ public class Board {
     private int currentPiceY;
     private int currentPiceX;
     private int gameState; //1 = jugando, 2 = gano, 3 = perdio
+    private boolean loop;
 
     public Board(int width, int height) {
         setWidthHeight(width, height);
         setGameState(1);
+        setLoop(false);
+    }
+    
+    public Board(int width, int height, boolean loop) {
+        setWidthHeight(width, height);
+        setGameState(1);
+        setLoop(true);
     }
 
     //Set para doble encapsulamiento
@@ -53,6 +61,11 @@ public class Board {
     private void setGameState(int state){
         this.gameState = state;
     }
+
+    private void setLoop(boolean loop){
+        this.loop = loop;
+    }
+
 
     //Get para doble enc
     public int getWidth() {
@@ -176,9 +189,14 @@ public class Board {
                 
             }
             EliminarLinea();
-            
+            if(loop)
+            {
+                addRandomPiece();
+            }
         }
     }
+
+    
 
     public void moveLeft(){
         boolean canMove = true; 
