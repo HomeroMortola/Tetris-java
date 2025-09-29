@@ -1,21 +1,21 @@
 package com.mycompany.app;
 
 public class Tetris {
-    public Clock clock1;
-    public Board board1;
+    public Clock clock;
+    public Board board;
 
-    private void setBoard1(Board board1) {
-        this.board1 = board1;
+    private void setBoard1(Board board) {
+        this.board = board;
     }
-    private void setClock1(Clock clock1) {
-        this.clock1 = clock1;
+    private void setClock1(Clock clock) {
+        this.clock = clock;
     }
 
     public Board getBoard() {
-        return board1;
+        return board;
     }
     public Clock getClock() {
-        return clock1;
+        return clock;
     }  
 
 
