@@ -1,6 +1,6 @@
 package com.mycompany.app;
 
-public abstract class PieceBase {
+public abstract class PieceBase implements iRotate {
 
     private final Cell[] cells = new Cell[4];
 
