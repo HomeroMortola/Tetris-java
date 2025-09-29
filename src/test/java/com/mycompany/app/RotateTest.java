@@ -75,13 +75,13 @@ public class RotateTest {
         Object[] c = p.getCells();
         p.rotateLeft();
         assertTrue(((Cell) c[0]).getX() == 0);
-        assertTrue(((Cell) c[0]).getY() == 1);
+        assertTrue(((Cell) c[0]).getY() == -1);
         assertTrue(((Cell) c[1]).getX() == 0);
         assertTrue(((Cell) c[1]).getY() == 0);
         assertTrue(((Cell) c[2]).getX() == 0);
-        assertTrue(((Cell) c[2]).getY() == -1);
-        assertTrue(((Cell) c[3]).getX() == -1);
-        assertTrue(((Cell) c[3]).getY() == -1);
+        assertTrue(((Cell) c[2]).getY() == 1);
+        assertTrue(((Cell) c[3]).getX() == 1);
+        assertTrue(((Cell) c[3]).getY() == 1);
     }
 
     @Test
@@ -90,13 +90,13 @@ public class RotateTest {
         Object[] c = p.getCells();
         p.rotateRight();
         assertTrue(((Cell) c[0]).getX() == 0);
-        assertTrue(((Cell) c[0]).getY() == -1);
+        assertTrue(((Cell) c[0]).getY() == 1);
         assertTrue(((Cell) c[1]).getX() == 0);
         assertTrue(((Cell) c[1]).getY() == 0);
         assertTrue(((Cell) c[2]).getX() == 0);
-        assertTrue(((Cell) c[2]).getY() == 1);
-        assertTrue(((Cell) c[3]).getX() == 1);
-        assertTrue(((Cell) c[3]).getY() == 1);
+        assertTrue(((Cell) c[2]).getY() == -1);
+        assertTrue(((Cell) c[3]).getX() == -1);
+        assertTrue(((Cell) c[3]).getY() == -1);
     }
 
     //Rotación pieza L izquierda
@@ -106,13 +106,13 @@ public class RotateTest {
         Object[] c = p.getCells();
         p.rotateLeft();
         assertTrue(((Cell) c[0]).getX() == 0);
-        assertTrue(((Cell) c[0]).getY() == -1);
+        assertTrue(((Cell) c[0]).getY() == 1);
         assertTrue(((Cell) c[1]).getX() == 0);
         assertTrue(((Cell) c[1]).getY() == 0);
         assertTrue(((Cell) c[2]).getX() == 0);
-        assertTrue(((Cell) c[2]).getY() == 1);
-        assertTrue(((Cell) c[3]).getX() == 1);
-        assertTrue(((Cell) c[3]).getY() == 1);
+        assertTrue(((Cell) c[2]).getY() == -1);
+        assertTrue(((Cell) c[3]).getX() == -1);
+        assertTrue(((Cell) c[3]).getY() == -1);
     }
 
     @Test
@@ -121,13 +121,13 @@ public class RotateTest {
         Object[] c = p.getCells();
         p.rotateRight();
         assertTrue(((Cell) c[0]).getX() == 0);
-        assertTrue(((Cell) c[0]).getY() == 1);
+        assertTrue(((Cell) c[0]).getY() == -1);
         assertTrue(((Cell) c[1]).getX() == 0);
         assertTrue(((Cell) c[1]).getY() == 0);
         assertTrue(((Cell) c[2]).getX() == 0);
-        assertTrue(((Cell) c[2]).getY() == -1);
-        assertTrue(((Cell) c[3]).getX() == -1);
-        assertTrue(((Cell) c[3]).getY() == -1);
+        assertTrue(((Cell) c[2]).getY() == 1);
+        assertTrue(((Cell) c[3]).getX() == 1);
+        assertTrue(((Cell) c[3]).getY() == 1);
     }
     
     //Rotación pieza Dog derecha
@@ -140,8 +140,8 @@ public class RotateTest {
         assertTrue(((Cell) c[0]).getY() == 1);
         assertTrue(((Cell) c[1]).getX() == 0);
         assertTrue(((Cell) c[1]).getY() == 0);
-        assertTrue(((Cell) c[2]).getX() == 1);
-        assertTrue(((Cell) c[2]).getY() == 0);
+        assertTrue(((Cell) c[2]).getX() == 0);
+        assertTrue(((Cell) c[2]).getY() == -1);
         assertTrue(((Cell) c[3]).getX() == 1);
         assertTrue(((Cell) c[3]).getY() == -1);
     }
@@ -155,8 +155,8 @@ public class RotateTest {
         assertTrue(((Cell) c[0]).getY() == -1);
         assertTrue(((Cell) c[1]).getX() == 0);
         assertTrue(((Cell) c[1]).getY() == 0);
-        assertTrue(((Cell) c[2]).getX() == -1);
-        assertTrue(((Cell) c[2]).getY() == 0);
+        assertTrue(((Cell) c[2]).getX() == 0);
+        assertTrue(((Cell) c[2]).getY() == 1);
         assertTrue(((Cell) c[3]).getX() == -1);
         assertTrue(((Cell) c[3]).getY() == 1);
     }
@@ -167,13 +167,13 @@ public class RotateTest {
         PieceBase p = new PieceDogL();
         Object[] c = p.getCells();
         p.rotateLeft();
-        assertTrue(((Cell) c[0]).getX() == -1);
+        assertTrue(((Cell) c[0]).getX() == 1);
         assertTrue(((Cell) c[0]).getY() == 0);
         assertTrue(((Cell) c[1]).getX() == 0);
         assertTrue(((Cell) c[1]).getY() == 0);
         assertTrue(((Cell) c[2]).getX() == 0);
         assertTrue(((Cell) c[2]).getY() == 1);
-        assertTrue(((Cell) c[3]).getX() == 1);
+        assertTrue(((Cell) c[3]).getX() == -1);
         assertTrue(((Cell) c[3]).getY() == 1);
     }
 
@@ -182,13 +182,13 @@ public class RotateTest {
         PieceBase p = new PieceDogL();
         Object[] c = p.getCells();
         p.rotateRight();
-        assertTrue(((Cell) c[0]).getX() == 1);
+        assertTrue(((Cell) c[0]).getX() == -1);
         assertTrue(((Cell) c[0]).getY() == 0);
         assertTrue(((Cell) c[1]).getX() == 0);
         assertTrue(((Cell) c[1]).getY() == 0);
         assertTrue(((Cell) c[2]).getX() == 0);
         assertTrue(((Cell) c[2]).getY() == -1);
-        assertTrue(((Cell) c[3]).getX() == -1);
+        assertTrue(((Cell) c[3]).getX() == 1);
         assertTrue(((Cell) c[3]).getY() == -1);
     }
 
