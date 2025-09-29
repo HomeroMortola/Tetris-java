@@ -61,4 +61,13 @@ public class TetrisTest {
         assertTrue(pieceBefore == pieceAfter);
         assertTrue(xBefore == (xAfter - 1));
     }
+
+    //Verifica que el estado inicial es "jugando"
+    @Test
+    public void testState() {
+        Tetris tetris = new Tetris();
+        tetris.start();
+        int state = tetris.state();
+        assertTrue(state == 1); 
+    }
 }
