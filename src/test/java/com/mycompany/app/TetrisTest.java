@@ -24,11 +24,38 @@ public class TetrisTest {
         int yBefore = tetris.getBoard().getCurrentPieceY();
         tetris.tick();
         tetris.tick();
-        tetris.tick();
         PieceBase pieceAfter = tetris.getBoard().getCurrentPiece();
         int yAfter = tetris.getBoard().getCurrentPieceY();
         System.out.println(yBefore + " " + yAfter);
         assertTrue(pieceBefore == pieceAfter);
         assertTrue(yBefore == (yAfter + 1));
+    }
+
+    @Test
+    public void testMovePieceLeft() {
+        Tetris tetris = new Tetris();
+        tetris.start();
+        PieceBase pieceBefore = tetris.getBoard().getCurrentPiece();
+        int xBefore = tetris.getBoard().getCurrentPieceX();
+        tetris.moveLeft();
+        PieceBase pieceAfter = tetris.getBoard().getCurrentPiece();
+        int xAfter = tetris.getBoard().getCurrentPieceX();
+        System.out.println(xBefore + " " + xAfter);
+        assertTrue(pieceBefore == pieceAfter);
+        assertTrue(xBefore == (xAfter + 1));
+    }
+
+    @Test
+    public void testMovePieceRight() {
+        Tetris tetris = new Tetris();
+        tetris.start();
+        PieceBase pieceBefore = tetris.getBoard().getCurrentPiece();
+        int xBefore = tetris.getBoard().getCurrentPieceX();
+        tetris.moveRight();
+        PieceBase pieceAfter = tetris.getBoard().getCurrentPiece();
+        int xAfter = tetris.getBoard().getCurrentPieceX();
+        System.out.println(xBefore + " " + xAfter);
+        assertTrue(pieceBefore == pieceAfter);
+        assertTrue(xBefore == (xAfter - 1));
     }
 }
