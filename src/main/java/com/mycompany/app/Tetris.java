@@ -3,7 +3,9 @@ package com.mycompany.app;
 public class Tetris {
     public Clock clock;
     public Board board;
+    public int gameState; //1 = jugando, 2 = gano, 3 = perdio
 
+    //Set para doble encapsulamiento
     private void setBoard(Board board) {
         this.board = board;
     }
@@ -11,13 +13,22 @@ public class Tetris {
         this.clock = clock;
     }
 
+    private void setGameState(int state) {
+        this.gameState = state;
+    }
+
+    //Get para doble encapsulamiento
     public Board getBoard() {
         return board;
     }
+
     public Clock getClock() {
         return clock;
     }  
 
+    public int getGameState() {
+        return gameState;
+    }
 
     public void start() {
         setBoard(new Board(10, 20,true));
@@ -26,11 +37,8 @@ public class Tetris {
     }
     
     //INCOMPLETO
-    public void state(){
-        for(int i=0; i<4 ; i++){
-            getBoard().getCurrentCellX(i);
-            getBoard().getCurrentCellY(i);
-        }
+    public int state(){
+        return getGameState();
     }
 
     public void tick(){
