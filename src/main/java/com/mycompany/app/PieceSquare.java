@@ -9,4 +9,9 @@ public class PieceSquare extends PieceBase {
             new Cell(1, 1)
         );
     }
+    
+    @Override
+    public void rotateLeft() {
+        // No rotation needed for square piece
+    }
 }
