@@ -6,12 +6,15 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class BoardTest {
+    //Test de verificacion de existencia del tablero
     @Test
     public void testBoardExiste() {
         Board board1 = new Board(10, 20);
         assertNotNull(board1);
     }
     
+    //Test de caida libre de piezas
+    //Stick
     @Test
     public void testCaidaLibreStick() {
         Board board1 = new Board(10, 20);
@@ -36,6 +39,8 @@ public class BoardTest {
         assertTrue(todosMayorIgualCero);
         assertTrue(alMenosUnoCero);
     }
+
+    //Square
     @Test
     public void testCaidaLibreSquare() {
         Board board1 = new Board(10, 20);
@@ -61,6 +66,8 @@ public class BoardTest {
         assertTrue(alMenosUnoCero);
     }
 
+    //Test de colisión entre piezas
+    //Square y Stick
     @Test
     public void testColision() {
         Board board1 = new Board(10, 20);
@@ -83,6 +90,7 @@ public class BoardTest {
         assertTrue(board1.getGrid()[5][5]==1);                
     }
 
+    //Square y LL
     @Test
     public void testColision2() {
         Board board1 = new Board(10, 20);
@@ -107,6 +115,7 @@ public class BoardTest {
                
     }
 
+    //Test de verificación de movimiento horizontal (tanto izquierda como derecha)
     @Test
     public void testMovimientoHorizontal() {
         Board board1 = new Board(10, 20);
@@ -156,7 +165,7 @@ public class BoardTest {
         
     }
 
-
+    //Test de eliminar líneas completas
     @Test 
     public void testEliminarLinea() {
         Board board1 = new Board(10, 20);
@@ -232,6 +241,7 @@ public class BoardTest {
         assertTrue(board1.lineCount()==2);
     }
      
+    //Test de verificación de que no se agrega una pieza cuando no hay espacio
     @Test
     public void TestnoAgrega(){
         Board board1 = new Board(10, 20);
@@ -251,9 +261,4 @@ public class BoardTest {
         }
         assertTrue(board1.getGameState() == 3);
     }
-    
-    
-
-    
-
 }
