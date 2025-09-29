@@ -24,7 +24,7 @@ public class Board {
     public Board(int width, int height, boolean loop) {
         setWidthHeight(width, height);
         setGameState(1);
-        setLoop(true);
+        setLoop(loop);
     }
 
     //Set para doble encapsulamiento
