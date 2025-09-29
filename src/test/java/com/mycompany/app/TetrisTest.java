@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class TetrisTest {
+    //Test de agregar pieza aleatoria al tablero
     @Test
     public void testAddRandomPieceWithTetris() {
         Tetris tetris = new Tetris();
@@ -16,6 +17,7 @@ public class TetrisTest {
         assertTrue(tetris.getBoard().getCurrentPiece() != null); //Verifica que la pieza actual no es nula
     }
 
+    //Test de que la pieza baja con el reloj
     @Test
     public void testMovePieceDownWithClock() {
         Tetris tetris = new Tetris();
@@ -31,6 +33,7 @@ public class TetrisTest {
         assertTrue(yBefore == (yAfter + 1));
     }
 
+    //Test de mover pieza lateralmente
     @Test
     public void testMovePieceLeft() {
         Tetris tetris = new Tetris();
