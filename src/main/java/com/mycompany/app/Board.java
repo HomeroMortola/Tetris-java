@@ -165,33 +165,36 @@ public class Board {
     //Métodos para mover las piezas (comprobando si se pueden mover o no)
     public void moveDown(){
     boolean canMove = true; 
-        for (int i = 0; i < 4; i++) {
-            if (getCurrentCellY(i) == 0) {
-                canMove = false;
-                break; 
-            }
-        }
-        if (canMove) {
+        if (getCurrentPiece() != null) {  
             for (int i = 0; i < 4; i++) {
-                if (getGrid()[getCurrentCellX(i)][getCurrentCellY(i) - 1] == 1) {
-                canMove = false;
-                break; 
+                if (getCurrentCellY(i) == 0) {
+                    canMove = false;
+                    break; 
                 }
             }
-        }
-        
-        if (canMove) { 
-            setCurrentPieceY(getCurrentPieceY() - 1);
-        } else {
-            for (int i = 0; i < 4; i++) {
-                grid[getCurrentCellX(i)][getCurrentCellY(i)] = 1;
-                setGrid(grid);
-                
+            if (canMove) {
+                for (int i = 0; i < 4; i++) {
+                    if (getGrid()[getCurrentCellX(i)][getCurrentCellY(i) - 1] == 1) {
+                    canMove = false;
+                    break; 
+                    }
+                }
             }
-            EliminarLinea();
-            if(loop)
-            {
-                addRandomPiece();
+            
+            if (canMove) { 
+                setCurrentPieceY(getCurrentPieceY() - 1);
+            } else {
+                for (int i = 0; i < 4; i++) {
+                    grid[getCurrentCellX(i)][getCurrentCellY(i)] = 1;
+                    setGrid(grid);
+                    
+                }
+                EliminarLinea();
+                setCurrentPiece(null);
+                if(loop)
+                {
+                    addRandomPiece();
+                }
             }
         }
     }

@@ -200,7 +200,7 @@ public class BoardTest {
         for (int i = 0; i < 3; i++) {
             board1.moveRight();
         }
-        for (int i = 0; i < 21; i++) {//21, porque el codigo de momento no no premite segur vajando hasta que se seleccione una nueva piesa 
+        for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }    
         assertTrue(board1.getGrid()[0][0]==0); 
