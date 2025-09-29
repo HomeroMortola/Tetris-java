@@ -114,7 +114,7 @@ public class Board {
     public void addPiece(PieceBase piece, int columna){
         boolean canAdd = true;
         for (int x = 0; x < getWidth(); x++) {
-            for (int y = 17; y < getHeight(); y++) {
+            for (int y = 15; y < getHeight(); y++) {
                 if (grid[x][y] == 1) {
                     canAdd = false;
                 }

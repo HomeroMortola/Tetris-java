@@ -70,4 +70,8 @@ public class Tetris {
     public void rotateRight(){
         getBoard().getCurrentPiece().rotateRight();
     }
+    public void addPiece(PieceBase piece, int x){
+        getBoard().addPiece(piece, x);
+        setGameState(getBoard().getGameState());
+    }
 }
