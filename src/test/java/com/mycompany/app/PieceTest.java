@@ -12,21 +12,23 @@ import static org.junit.Assert.assertTrue;
 
 
 public class PieceTest {
-    public PieceTest() {
-    }
-
+    //Tests de verificación de existencia de piezas
+    //Verificación de existencia de pieza
     @Test
     public void testPieceExiste() {
         PieceBase p = new PieceSquare();
         assertNotNull(p);
     }
 
+    //Verificación de cantidad de cells que hay en una pieza
     @Test
     public void testPiece4Elementos() {
         PieceBase p = new PieceSquare();
         assertTrue(p.getCells().length == 4);
     }
     
+    //Tests de verificación de que las piezas se crean correctamente
+    //Square
     @Test
     public void testPieceSquer() {
         Constantes constantes = new Constantes();
@@ -39,6 +41,8 @@ public class PieceTest {
             assertEquals("y distinto en celda " + i, esperado[i].getY(), cels[i].getY());
         }
     }
+
+    //Stick
     @Test
     public void testPieceStick() {
         Constantes constantes = new Constantes();
@@ -51,6 +55,8 @@ public class PieceTest {
             assertEquals("y distinto en celda " + i, esperado[i].getY(), cels[i].getY());
         }
     }
+
+    //LR
     @Test
     public void testPieceLR() {
         Constantes constantes = new Constantes();
@@ -63,6 +69,8 @@ public class PieceTest {
             assertEquals("y distinto en celda " + i, esperado[i].getY(), cels[i].getY());
         }
     }
+
+    //LL
     @Test
     public void testPieceLL() {
         Constantes constantes = new Constantes();
@@ -75,6 +83,8 @@ public class PieceTest {
             assertEquals("y distinto en celda " + i, esperado[i].getY(), cels[i].getY());
         }
     }
+
+    //T
     @Test
     public void testPieceT() {
         Constantes constantes = new Constantes();
@@ -87,6 +97,8 @@ public class PieceTest {
             assertEquals("y distinto en celda " + i, esperado[i].getY(), cels[i].getY());
         }
     }
+
+    //DogR
     @Test
     public void testPieceDogR() {
         Constantes constantes = new Constantes();
@@ -99,6 +111,8 @@ public class PieceTest {
             assertEquals("y distinto en celda " + i, esperado[i].getY(), cels[i].getY());
         }
     }
+
+    //DogL
     @Test
     public void testPieceDogL() {
         Constantes constantes = new Constantes();
