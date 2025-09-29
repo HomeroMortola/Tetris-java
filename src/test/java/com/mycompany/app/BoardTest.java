@@ -12,6 +12,16 @@ public class BoardTest {
         Board board1 = new Board(10, 20);
         assertNotNull(board1);
     }
+
+    //Test de adición de una pieza al tablero
+    @Test
+    public void testAddPiece() {
+        Board board1 = new Board(10, 20);
+        PieceBase piece1 = new PieceSquare();
+        board1.addPiece(piece1, 5);
+        assertTrue(board1.getPieces() != null);
+        assertTrue(board1.getCurrentPiece() == piece1);
+    }
     
     //Test de caida libre de piezas
     //Stick
