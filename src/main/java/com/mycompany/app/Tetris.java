@@ -34,6 +34,7 @@ public class Tetris {
         setBoard(new Board(10, 20,true));
         setClock(new Clock());
         getBoard().addRandomPiece();
+        setGameState(1);
     }
     
     //INCOMPLETO
