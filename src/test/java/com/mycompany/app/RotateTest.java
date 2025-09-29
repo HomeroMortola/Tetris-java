@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 public class RotateTest {
+
+    //Rotación pieza T
     @Test
     public void testPieceTRotateL() {
         PieceBase p = new PieceT();
@@ -35,6 +37,7 @@ public class RotateTest {
         assertTrue(((Cell) c[3]).getY() == 0);
     }
 
+    //Rotación pieza Stick
     @Test
     public void testPieceStickRotateL() {
         PieceBase p = new PieceStick();
@@ -65,7 +68,7 @@ public class RotateTest {
         assertTrue(((Cell) c[3]).getY() == 0);
     }
 
-    
+    //Rotación pieza L derecha
     @Test
     public void testPieceLRRotateL() {
         PieceBase p = new PieceLR();
@@ -96,7 +99,7 @@ public class RotateTest {
         assertTrue(((Cell) c[3]).getY() == 1);
     }
 
-    
+    //Rotación pieza L izquierda
     @Test
     public void testPieceLLRotateL() {
         PieceBase p = new PieceLL();
@@ -127,6 +130,7 @@ public class RotateTest {
         assertTrue(((Cell) c[3]).getY() == -1);
     }
     
+    //Rotación pieza Dog derecha
     @Test
     public void testPieceDogRRotateL() {
         PieceBase p = new PieceDogR();
@@ -157,7 +161,7 @@ public class RotateTest {
         assertTrue(((Cell) c[3]).getY() == 1);
     }
 
-    
+    //Rotación pieza Dog izquierda
     @Test
     public void testPieceDogLRotateL() {
         PieceBase p = new PieceDogL();
@@ -188,6 +192,7 @@ public class RotateTest {
         assertTrue(((Cell) c[3]).getY() == -1);
     }
 
+    //Tests de colisión al rotar (izquierda y derecha)
     @Test
     public void testCollisionOnRotateLeft() {
         Board board = new Board(10, 20);
