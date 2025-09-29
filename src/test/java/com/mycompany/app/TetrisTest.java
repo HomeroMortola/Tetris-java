@@ -70,4 +70,29 @@ public class TetrisTest {
         int state = tetris.state();
         assertTrue(state == 1); 
     }
+
+    //Verifica que el estado cambio a 3 (perdio)
+    @Test
+    public void testStateLose(){
+        Tetris tetris = new Tetris();
+        tetris.start(false);
+        PieceBase[] pieces = {
+            new PieceStick(),
+            new PieceStick(),
+            new PieceStick(),
+            new PieceStick(),
+            new PieceStick()
+
+        };
+        for (PieceBase p : pieces){
+            tetris.addPiece(p, 5);
+            for (int i = 0; i < 45; i++){
+                tetris.tick();
+            }
+        }
+        int state = tetris.state();
+        assertTrue(state == 3);
+        
+    }
+
 }
