@@ -22,6 +22,7 @@ public class Tetris {
     public void start() {
         setBoard(new Board(10, 20,true));
         setClock(new Clock());
+        getBoard().addRandomPiece();
     }
     
     //INCOMPLETO

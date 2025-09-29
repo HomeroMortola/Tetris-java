@@ -16,4 +16,19 @@ public class TetrisTest {
         assertTrue(tetris.getBoard().getCurrentPiece() != null); //Verifica que la pieza actual no es nula
     }
 
+    @Test
+    public void testMovePieceDownWithClock() {
+        Tetris tetris = new Tetris();
+        tetris.start();
+        PieceBase pieceBefore = tetris.getBoard().getCurrentPiece();
+        int yBefore = tetris.getBoard().getCurrentPieceY();
+        tetris.tick();
+        tetris.tick();
+        tetris.tick();
+        PieceBase pieceAfter = tetris.getBoard().getCurrentPiece();
+        int yAfter = tetris.getBoard().getCurrentPieceY();
+        System.out.println(yBefore + " " + yAfter);
+        assertTrue(pieceBefore == pieceAfter);
+        assertTrue(yBefore == (yAfter + 1));
+    }
 }
