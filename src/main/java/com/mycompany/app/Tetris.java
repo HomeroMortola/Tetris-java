@@ -4,10 +4,10 @@ public class Tetris {
     public Clock clock;
     public Board board;
 
-    private void setBoard1(Board board) {
+    private void setBoard(Board board) {
         this.board = board;
     }
-    private void setClock1(Clock clock) {
+    private void setClock(Clock clock) {
         this.clock = clock;
     }
 
@@ -20,8 +20,8 @@ public class Tetris {
 
 
     public void start() {
-        setBoard1(new Board(10, 20,true));
-        setClock1(new Clock());
+        setBoard(new Board(10, 20,true));
+        setClock(new Clock());
     }
     
     //INCOMPLETO
