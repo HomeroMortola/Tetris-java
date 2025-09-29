@@ -36,7 +36,14 @@ public class Tetris {
         getBoard().addRandomPiece();
         setGameState(1);
     }
-    
+
+    public void start(boolean loop) {
+        setBoard(new Board(10, 20));
+        setClock(new Clock());
+        getBoard().addRandomPiece();
+        setGameState(1);
+    }
+
     //INCOMPLETO
     public int state(){
         return getGameState();
