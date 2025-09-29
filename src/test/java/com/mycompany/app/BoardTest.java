@@ -26,7 +26,7 @@ public class BoardTest {
     //Test de caida libre de piezas
     //Stick
     @Test
-    public void testCaidaLibreStick() {
+    public void testStickFreeFall() {
         Board board1 = new Board(10, 20);
         PieceBase piece1 = new PieceStick();
         boolean todosMayorIgualCero = true;
@@ -52,7 +52,7 @@ public class BoardTest {
 
     //Square
     @Test
-    public void testCaidaLibreSquare() {
+    public void testSquareFreeFall() {
         Board board1 = new Board(10, 20);
         PieceBase piece1 = new PieceSquare();
         boolean todosMayorIgualCero = true;
@@ -127,7 +127,7 @@ public class BoardTest {
 
     //Test de verificación de movimiento horizontal (tanto izquierda como derecha)
     @Test
-    public void testMovimientoHorizontal() {
+    public void testHorizontalMovement() {
         Board board1 = new Board(10, 20);
         PieceBase piece1 = new PieceSquare();
         PieceBase piece2 = new PieceSquare();
@@ -177,7 +177,7 @@ public class BoardTest {
 
     //Test de eliminar líneas completas
     @Test 
-    public void testEliminarLinea() {
+    public void testDeleteLine() {
         Board board1 = new Board(10, 20);
         PieceBase piece1 = new PieceSquare();
         PieceBase piece2 = new PieceSquare();
@@ -185,7 +185,6 @@ public class BoardTest {
         PieceBase piece4 = new PieceSquare();
         PieceBase piece5 = new PieceSquare();
         PieceBase piece6 = new PieceSquare();
-        
         
         board1.addPiece(piece1,5);
         for (int i = 0; i < 5; i++) {
@@ -238,8 +237,6 @@ public class BoardTest {
         assertTrue(board1.getGrid()[8][0]==0);
         assertTrue(board1.getGrid()[9][0]==0); 
 
-
-
         board1.addPiece(piece6,5); 
         for (int i = 0; i < 21; i++) {
             board1.moveDown();
@@ -253,7 +250,7 @@ public class BoardTest {
      
     //Test de verificación de que no se agrega una pieza cuando no hay espacio
     @Test
-    public void TestnoAgrega(){
+    public void testDontAdd(){
         Board board1 = new Board(10, 20);
         PieceBase piecees[] = new PieceBase[6];
         piecees[0] = new PieceStick();
