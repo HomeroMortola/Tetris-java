@@ -95,4 +95,36 @@ public class TetrisTest {
         
     }
 
+    @Test
+    public void testStateWin(){
+        Tetris tetris = new Tetris();
+        
+        tetris.start(false);
+        
+        PieceBase[] pieces = {
+            new PieceSquare(),
+            new PieceSquare(),
+            new PieceSquare(),
+            new PieceSquare(),
+            new PieceSquare(),
+
+        };
+        for(int i = 0; i < 3; i++){ 
+            for (int p = 0 ; p < 5; p++){
+                tetris.addPiece(pieces[p], p*2);
+                for (int j = 0; j < 44; j++){
+                    
+                    tetris.tick();
+                }
+            } 
+            
+            
+        }
+        
+        int state = tetris.state();
+        assertTrue(state == 2);
+        
+    }
+
+
 }

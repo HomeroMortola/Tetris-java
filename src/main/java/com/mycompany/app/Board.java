@@ -266,6 +266,9 @@ public class Board {
                 }
                 y--; // Re-evaluar la misma línea después de eliminarla
                 lineasCompletadas++;
+                if (lineasCompletadas >= 5){
+                    setGameState(2);
+                }
             }
         }
     }

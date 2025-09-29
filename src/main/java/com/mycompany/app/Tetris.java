@@ -43,17 +43,21 @@ public class Tetris {
         setGameState(1);
     }
 
-    //INCOMPLETO
     public int state(){
         return getGameState();
     }
 
     public void tick(){
         getClock().tick();
+        if ( getBoard().getGameState() == 2 || getBoard().getGameState() == 3){
+            setGameState(getBoard().getGameState());
+            setBoard(new Board(10, 20));
+        }
         if ((getClock().getTime() % 2)== 0)
         {
             getBoard().moveDown();
         }
+        
     }
 
     public void moveLeft(){
