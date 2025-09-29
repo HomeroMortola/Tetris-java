@@ -40,7 +40,6 @@ public class Tetris {
     public void start(boolean loop) {
         setBoard(new Board(10, 20));
         setClock(new Clock());
-        getBoard().addRandomPiece();
         setGameState(1);
     }
 
