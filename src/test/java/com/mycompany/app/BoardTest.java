@@ -24,10 +24,10 @@ public class BoardTest {
             board1.moveDown();
         }
         for (int i = 0; i < 4; i++) {
-            if (board1.getCurrentCellY(i) < 0) {
+            if (board1.getGrid()[0][i] < 0) {
                 todosMayorIgualCero = false;
             }
-            if (board1.getCurrentCellY(i) == 0) {
+            if (board1.getGrid()[0][i] == 0) {
                 alMenosUnoCero = true;
                 break;
             }
@@ -49,10 +49,10 @@ public class BoardTest {
         }
 
         for (int i = 0; i < 4; i++) {
-            if (board1.getCurrentCellY(i) < 0) {
+            if (board1.getGrid()[0][i] < 0) {
                 todosMayorIgualCero = false;
             }
-            if (board1.getCurrentCellY(i) == 0) {
+            if (board1.getGrid()[0][i] == 0) {
                 alMenosUnoCero = true;
                 break;
             }          
@@ -76,10 +76,11 @@ public class BoardTest {
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
-        assertTrue(board1.getCurrentCellY(0)==2);
-        assertTrue(board1.getCurrentCellY(1)==3);
-        assertTrue(board1.getCurrentCellY(2)==4);
-        assertTrue(board1.getCurrentCellY(3)==5);         
+
+        assertTrue(board1.getGrid()[5][2]==1);
+        assertTrue(board1.getGrid()[5][3]==1);
+        assertTrue(board1.getGrid()[5][4]==1);
+        assertTrue(board1.getGrid()[5][5]==1);                
     }
 
     @Test
@@ -97,10 +98,13 @@ public class BoardTest {
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
-        assertTrue(board1.getCurrentCellY(0)==2);
-        assertTrue(board1.getCurrentCellY(1)==2);
-        assertTrue(board1.getCurrentCellY(2)==2);
-        assertTrue(board1.getCurrentCellY(3)==3);         
+
+        assertTrue(board1.getGrid()[5][2]==1);
+        assertTrue(board1.getGrid()[5][2]==1);
+        assertTrue(board1.getGrid()[5][2]==1);
+        assertTrue(board1.getGrid()[4][3]==1);
+        
+               
     }
 
     @Test
@@ -118,10 +122,11 @@ public class BoardTest {
             board1.moveDown();
         }
 
-        assertTrue(board1.getCurrentCellX(0)==0); 
-        assertTrue(board1.getCurrentCellX(1)==1);
-        assertTrue(board1.getCurrentCellX(2)==0);
-        assertTrue(board1.getCurrentCellX(3)==1);
+        assertTrue(board1.getGrid()[0][0]==1);
+        assertTrue(board1.getGrid()[0][1]==1);
+        assertTrue(board1.getGrid()[1][0]==1);
+        assertTrue(board1.getGrid()[1][1]==1);
+        
 
         board1.addPiece(piece2,5);
 
