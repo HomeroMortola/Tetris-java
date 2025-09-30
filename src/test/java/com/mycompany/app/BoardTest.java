@@ -179,64 +179,28 @@ public class BoardTest {
     @Test 
     public void testDeleteLine() {
         Board board1 = new Board(10, 20);
-        PieceBase piece1 = new PieceSquare();
-        PieceBase piece2 = new PieceSquare();
-        PieceBase piece3 = new PieceSquare();
-        PieceBase piece4 = new PieceSquare();
-        PieceBase piece5 = new PieceSquare();
+        
+        PieceBase[] pieces = {
+            new PieceSquare(),
+            new PieceSquare(),
+            new PieceSquare(),
+            new PieceSquare(),
+            new PieceSquare(),
+
+        };
         PieceBase piece6 = new PieceSquare();
         
-        board1.addPiece(piece1,5);
-        for (int i = 0; i < 5; i++) {
-            board1.moveLeft();
+        for (int p = 0 ; p < 5; p++){
+            board1.addPiece(pieces[p], p*2);
+            for (int j = 0; j < 21; j++){        
+                board1.moveDown();
+            }
+        } 
+        
+        for (int i = 0; i < 9; i++) {
+            assertTrue(board1.getGrid()[i][0]==0); 
         }
         
-        for (int i = 0; i < 40; i++) {
-            board1.moveDown();
-        }
-
-        board1.addPiece(piece2,5);
-        for (int i = 0; i < 3; i++) {
-            board1.moveLeft();
-        }
-        for (int i = 0; i < 40; i++) {
-            board1.moveDown();
-        }
-        
-        board1.addPiece(piece3,5);
-        for (int i = 0; i < 1; i++) {
-            board1.moveLeft();
-        }
-        for (int i = 0; i < 40; i++) {
-            board1.moveDown();
-        }
-        
-        board1.addPiece(piece4,5);
-        for (int i = 0; i < 1; i++) {
-            board1.moveRight();
-        }
-        for (int i = 0; i < 40; i++) {
-            board1.moveDown();   
-        }
-        
-        board1.addPiece(piece5,5);
-        for (int i = 0; i < 3; i++) {
-            board1.moveRight();
-        }
-        for (int i = 0; i < 40; i++) {
-            board1.moveDown();
-        }    
-        assertTrue(board1.getGrid()[0][0]==0); 
-        assertTrue(board1.getGrid()[1][0]==0);
-        assertTrue(board1.getGrid()[2][0]==0);
-        assertTrue(board1.getGrid()[3][0]==0);
-        assertTrue(board1.getGrid()[4][0]==0);
-        assertTrue(board1.getGrid()[5][0]==0);
-        assertTrue(board1.getGrid()[6][0]==0);
-        assertTrue(board1.getGrid()[7][0]==0); 
-        assertTrue(board1.getGrid()[8][0]==0);
-        assertTrue(board1.getGrid()[9][0]==0); 
-
         board1.addPiece(piece6,5); 
         for (int i = 0; i < 21; i++) {
             board1.moveDown();
@@ -244,8 +208,9 @@ public class BoardTest {
         
         assertTrue(board1.getGrid()[5][0]==1);
         assertTrue(board1.getGrid()[6][0]==1);
-
+        System.out.println(board1.lineCount());
         assertTrue(board1.lineCount()==2);
+        
     }
      
     //Test de verificación de que no se agrega una pieza cuando no hay espacio

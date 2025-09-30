@@ -117,8 +117,6 @@ public class TetrisTest {
                     tetris.tick();
                 }
             } 
-            
-            
         }
         
         int state = tetris.state();
