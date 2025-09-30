@@ -11,7 +11,7 @@ public class PieceSquare extends PieceBase {
     }
     
     @Override
-    public void rotateLeft() {
+    public void rotate(boolean left) {
         // No rotation needed for square piece
     }
 }
