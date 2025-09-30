@@ -15,14 +15,14 @@ public class PieceTest {
     //Tests de verificación de existencia de piezas
     //Verificación de existencia de pieza
     @Test
-    public void testPieceExiste() {
+    public void testPieceExists() {
         PieceBase p = new PieceSquare();
         assertNotNull(p);
     }
 
     //Verificación de cantidad de cells que hay en una pieza
     @Test
-    public void testPiece4Elementos() {
+    public void testPiece4Cells() {
         PieceBase p = new PieceSquare();
         assertTrue(p.getCells().length == 4);
     }
@@ -30,7 +30,7 @@ public class PieceTest {
     //Tests de verificación de que las piezas se crean correctamente
     //Square
     @Test
-    public void testPieceSquer() {
+    public void testPieceSquare() {
         Constantes constantes = new Constantes();
         PieceBase p1 = new PieceSquare();
         Cell[] cels = p1.getCells();
