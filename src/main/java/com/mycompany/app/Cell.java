@@ -8,7 +8,7 @@ public class Cell {
     public Cell(int x, int y) {
         setPosition(x, y);
     }
-
+    
     //Set para doble encapsulamiento
     public void setPosition(int x, int y) {
         setX(x);

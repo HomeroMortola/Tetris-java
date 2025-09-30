@@ -6,14 +6,14 @@ public abstract class PieceBase implements iRotate {
 
     //Constructor de la pieza (4 Cells)
     public PieceBase(Cell cell0, Cell cell1, Cell cell2, Cell cell3) {
-        setElementos(cell0, 0);
-        setElementos(cell1, 1);
-        setElementos(cell2, 2);
-        setElementos(cell3, 3);
+        setCells(cell0, 0);
+        setCells(cell1, 1);
+        setCells(cell2, 2);
+        setCells(cell3, 3);
     }
 
     //Asigna una celda en la posición indicada, doble encapsulamiento
-    public void setElementos(Cell cell, int i) {
+    public void setCells(Cell cell, int i) {
         this.cells[i] = cell;
     }
 
