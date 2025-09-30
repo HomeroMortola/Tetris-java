@@ -24,7 +24,7 @@ public abstract class PieceBase implements iRotate {
 
     //Método privado para rotar las piezas (si se pone left, gira a la izquierda, si se deja vacío, a la derecha, pero para eso están
     //los métodos de más abajo).
-    private void rotate(boolean left) {
+    public void rotate(boolean left) {
         //Obtiene los valores del pivot de la pieza, que es la segunda celda del arreglo
         int centerX = cells[1].getX();
         int centerY = cells[1].getY();
