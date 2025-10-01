@@ -200,7 +200,6 @@ public class BoardTest {
         
         assertTrue(board1.getGrid()[5][0]==1);
         assertTrue(board1.getGrid()[6][0]==1);
-        System.out.println(board1.lineCount());
         assertTrue(board1.lineCount()==2);
         
     }

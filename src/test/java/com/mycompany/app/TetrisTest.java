@@ -28,7 +28,6 @@ public class TetrisTest {
         tetris.tick();
         PieceBase pieceAfter = tetris.getBoard().getCurrentPiece();
         int yAfter = tetris.getBoard().getCurrentPieceY();
-        System.out.println(yBefore + " " + yAfter);
         assertTrue(pieceBefore == pieceAfter);
         assertTrue(yBefore == (yAfter + 1));
     }
@@ -43,7 +42,6 @@ public class TetrisTest {
         tetris.moveLeft();
         PieceBase pieceAfter = tetris.getBoard().getCurrentPiece();
         int xAfter = tetris.getBoard().getCurrentPieceX();
-        System.out.println(xBefore + " " + xAfter);
         assertTrue(pieceBefore == pieceAfter);
         assertTrue(xBefore == (xAfter + 1));
     }
@@ -57,7 +55,6 @@ public class TetrisTest {
         tetris.moveRight();
         PieceBase pieceAfter = tetris.getBoard().getCurrentPiece();
         int xAfter = tetris.getBoard().getCurrentPieceX();
-        System.out.println(xBefore + " " + xAfter);
         assertTrue(pieceBefore == pieceAfter);
         assertTrue(xBefore == (xAfter - 1));
     }
