@@ -29,20 +29,20 @@ public class BoardTest {
     public void testStickFreeFall() {
         Board board1 = new Board(10, 20);
         PieceBase piece1 = new PieceStick();
-        boolean alMenosUnoCero = false;
+        boolean alMenosUnoUno = false;
 
         board1.addPiece(piece1,5);
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
         for (int i = 0; i < 10; i++) {
-            if (board1.getGrid()[i][0] == 0) {
-                alMenosUnoCero = true;
+            if (board1.getGrid()[i][0] == 1) {
+                alMenosUnoUno = true;
                 break;
             }
         }
   
-        assertTrue(alMenosUnoCero);
+        assertTrue(alMenosUnoUno);
     }
 
     //Square
@@ -50,7 +50,7 @@ public class BoardTest {
     public void testSquareFreeFall() {
         Board board1 = new Board(10, 20);
         PieceBase piece1 = new PieceSquare();
-        boolean alMenosUnoCero = false;
+        boolean alMenosUnoUno = false;
 
         board1.addPiece(piece1,5);
         for (int i = 0; i < 40; i++) {
@@ -59,13 +59,13 @@ public class BoardTest {
 
         for (int i = 0; i < 10; i++) {
             
-            if (board1.getGrid()[i][0] == 0) {
-                alMenosUnoCero = true;
+            if (board1.getGrid()[i][0] == 1) {
+                alMenosUnoUno = true;
                 break;
             }          
         }
         
-        assertTrue(alMenosUnoCero);
+        assertTrue(alMenosUnoUno);
     }
 
     //Test de colisión entre piezas
