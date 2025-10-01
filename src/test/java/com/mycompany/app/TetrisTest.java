@@ -1,7 +1,6 @@
 package com.mycompany.app;
 
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 public class TetrisTest {
@@ -10,11 +9,16 @@ public class TetrisTest {
     public void testAddRandomPieceWithTetris() {
         Tetris tetris = new Tetris();
         tetris.start();
-        int piezasAntes = tetris.getBoard().getPieces().size();
+        int piezasAntesInt = tetris.getBoard().getPieces().size();
         tetris.getBoard().addRandomPiece();
-        int piezasDespues = tetris.getBoard().getPieces().size();
-        assertTrue(piezasDespues == piezasAntes + 1); //Verifica que se agregó una pieza a la lista de piezas
+        int piezasDespuesInt = tetris.getBoard().getPieces().size();
+        assertTrue(piezasDespuesInt == piezasAntesInt + 1); //Verifica que se agregó una pieza a la lista de piezas
         assertTrue(tetris.getBoard().getCurrentPiece() != null); //Verifica que la pieza actual no es nula
+
+        PieceBase piezasAntes = tetris.getBoard().getPieces().get(0); //Obtiene la última pieza agregada
+        PieceBase piezasDespues = tetris.getBoard().getPieces().get(1); //Obtiene la pieza actual
+
+        assertTrue(piezasAntes != piezasDespues); //Verifica que las piezas son distintas
     }
 
     //Test de que la pieza baja con el reloj

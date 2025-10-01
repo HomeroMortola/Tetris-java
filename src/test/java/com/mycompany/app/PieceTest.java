@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
 public class PieceTest {
     //Tests de verificación de existencia de piezas
     //Verificación de existencia de pieza
-    @Test
+    @Test  
     public void testPieceExists() {
         PieceBase p = new PieceSquare();
         assertNotNull(p);
