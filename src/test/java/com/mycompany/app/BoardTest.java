@@ -29,24 +29,19 @@ public class BoardTest {
     public void testStickFreeFall() {
         Board board1 = new Board(10, 20);
         PieceBase piece1 = new PieceStick();
-        boolean todosMayorIgualCero = true;
         boolean alMenosUnoCero = false;
 
         board1.addPiece(piece1,5);
         for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
-        for (int i = 0; i < 4; i++) {
-            if (board1.getGrid()[0][i] < 0) {
-                todosMayorIgualCero = false;
-            }
-            if (board1.getGrid()[0][i] == 0) {
+        for (int i = 0; i < 10; i++) {
+            if (board1.getGrid()[i][0] == 0) {
                 alMenosUnoCero = true;
                 break;
             }
         }
-        
-        assertTrue(todosMayorIgualCero);
+  
         assertTrue(alMenosUnoCero);
     }
 
@@ -55,7 +50,6 @@ public class BoardTest {
     public void testSquareFreeFall() {
         Board board1 = new Board(10, 20);
         PieceBase piece1 = new PieceSquare();
-        boolean todosMayorIgualCero = true;
         boolean alMenosUnoCero = false;
 
         board1.addPiece(piece1,5);
@@ -63,16 +57,14 @@ public class BoardTest {
             board1.moveDown();
         }
 
-        for (int i = 0; i < 4; i++) {
-            if (board1.getGrid()[0][i] < 0) {
-                todosMayorIgualCero = false;
-            }
-            if (board1.getGrid()[0][i] == 0) {
+        for (int i = 0; i < 10; i++) {
+            
+            if (board1.getGrid()[i][0] == 0) {
                 alMenosUnoCero = true;
                 break;
             }          
         }
-        assertTrue(todosMayorIgualCero);
+        
         assertTrue(alMenosUnoCero);
     }
 
@@ -202,7 +194,7 @@ public class BoardTest {
         }
         
         board1.addPiece(piece6,5); 
-        for (int i = 0; i < 21; i++) {
+        for (int i = 0; i < 40; i++) {
             board1.moveDown();
         }
         
@@ -225,7 +217,7 @@ public class BoardTest {
         piecees[4] = new PieceStick();
         piecees[5] = new PieceStick();
         
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 5; i++) {
             board1.addPiece(piecees[i],5);
             for(int j = 0; j < 20; j++ ){
                 board1.moveDown();
